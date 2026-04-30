@@ -8,52 +8,116 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
   {{ hugo.Generator }}
+  <style>
+    #td-gate{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center}
+    #td-gate-overlay{position:absolute;inset:0;background:linear-gradient(135deg,#1B2A4A 0%,#2C3E6B 50%,#1B2A4A 100%)}
+    #td-gate-box{position:relative;z-index:1;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:1rem;padding:2.5rem;width:100%;max-width:26rem;margin:1rem;box-shadow:0 20px 60px rgba(0,0,0,.3);text-align:center}
+    #td-gate-box h2{color:#fff;font-size:1.75rem;font-weight:700;margin:0 0 .5rem;letter-spacing:-.025em}
+    #td-gate-box .sub{color:#93C5FD;font-size:.95rem;margin:0 0 1.5rem}
+    #td-gate-box .lock{font-size:2.5rem;margin-bottom:1rem}
+    #td-gate-box p.msg{color:rgba(255,255,255,.7);font-size:.85rem;margin:0 0 1rem}
+    #td-gate-form{display:flex;flex-direction:column;gap:.75rem}
+    #td-gate-input{width:100%;padding:.85rem 1.1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:.5rem;color:#fff;font-size:1rem;outline:none;transition:border .2s,box-shadow .2s;box-sizing:border-box}
+    #td-gate-input:focus{border-color:#2563EB;box-shadow:0 0 0 3px rgba(37,99,235,.25)}
+    #td-gate-input::placeholder{color:rgba(255,255,255,.4)}
+    #td-gate-btn{width:100%;padding:.85rem;background:#2563EB;color:#fff;border:none;border-radius:.5rem;font-size:1rem;font-weight:600;cursor:pointer;transition:background .15s}
+    #td-gate-btn:hover{background:#1D4ED8}
+    #td-gate-err{color:#FCA5A5;font-size:.825rem;margin:0;display:none}
+    #td-gate-err.show{display:block;animation:td-shake .3s ease}
+    @keyframes td-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+    #td-gate-foot{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1)}
+    #td-gate-foot p{color:rgba(255,255,255,.35);font-size:.7rem;margin:0}
+    .td-hidden{display:none!important}
+  </style>
 </head>
 <body class="techdoc">
-  {{ partial "password-gate" . }}
 
-  <header class="techdoc-header">
-    <div class="techdoc-header__inner">
-      <a href="{{ .Site.BaseURL }}" class="techdoc-header__logo">
-        <span class="techdoc-header__brand">{{ .Site.Params.brand.name }}</span>
-      </a>
-      <nav class="techdoc-header__nav">
-        <a href="{{ "manuals/" | relLangURL }}">{{ i18n "manuals" }}</a>
-        <a href="{{ "warnings/" | relLangURL }}">{{ i18n "warnings" }}</a>
-        <a href="{{ "legal/" | relLangURL }}">{{ i18n "legal" }}</a>
-      </nav>
-      <div class="techdoc-header__actions">
-        {{ if hugo.IsMultilingual }}
-        <select class="techdoc-lang-selector" onchange="location = this.value;">
-          {{ range .Site.Languages }}
-          <option value="{{ .Lang | relLangURL }}" {{ if eq .Lang $.Site.Language.Lang }}selected{{ end }}>
-            {{ .LanguageName }}
-          </option>
-          {{ end }}
-        </select>
-        {{ end }}
+  <!-- PASSWORD GATE -->
+  <div id="td-gate">
+    <div id="td-gate-overlay"></div>
+    <div id="td-gate-box">
+      <div class="lock">&#128274;</div>
+      <h2>{{ .Site.Params.brand.name }}</h2>
+      <p class="sub">{{ i18n "site_tagline" }}</p>
+      <p class="msg">Acc&eacute;s restringit &mdash; Introdu&iuml;u la contrasenya</p>
+      <form id="td-gate-form" autocomplete="off">
+        <input type="password" id="td-gate-input" placeholder="Contrasenya" required />
+        <p id="td-gate-err">Contrasenya incorrecta</p>
+        <button type="submit" id="td-gate-btn">Accedir</button>
+      </form>
+      <div id="td-gate-foot">
+        <p>LinuxBCN / estategiadelcontenido.com</p>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="techdoc-main" id="mainContent" style="display: none;">
-    {{ block "main" . }}{{ end }}
-  </main>
+  <!-- SITE CONTENT (hidden until unlocked) -->
+  <div id="td-site" class="td-hidden">
+    <header class="techdoc-header">
+      <div class="techdoc-header__inner">
+        <a href="{{ .Site.BaseURL }}" class="techdoc-header__logo">
+          <span class="techdoc-header__brand">{{ .Site.Params.brand.name }}</span>
+        </a>
+        <nav class="techdoc-header__nav">
+          <a href="{{ "manuals/" | relLangURL }}">{{ i18n "manuals" }}</a>
+          <a href="{{ "warnings/" | relLangURL }}">{{ i18n "warnings" }}</a>
+          <a href="{{ "legal/" | relLangURL }}">{{ i18n "legal" }}</a>
+        </nav>
+        <div class="techdoc-header__actions">
+          {{ if hugo.IsMultilingual }}
+          <select class="techdoc-lang-selector" onchange="location = this.value;">
+            {{ range .Site.Languages }}
+            <option value="{{ .Lang | relLangURL }}" {{ if eq .Lang $.Site.Language.Lang }}selected{{ end }}>
+              {{ .LanguageName }}
+            </option>
+            {{ end }}
+          </select>
+          {{ end }}
+        </div>
+      </div>
+    </header>
 
-  <footer class="techdoc-footer" id="mainFooter" style="display: none;">
-    <div class="techdoc-footer__inner">
-      <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} — {{ i18n "powered_by" }} TechDocs LinuxBCN v{{ .Site.Params.deploy.version }}</p>
-    </div>
-  </footer>
+    <main class="techdoc-main">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="techdoc-footer">
+      <div class="techdoc-footer__inner">
+        <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} &mdash; {{ i18n "powered_by" }} TechDocs LinuxBCN v{{ .Site.Params.deploy.version }}</p>
+      </div>
+    </footer>
+  </div>
 
   <script>
-    // Password gate configuration
-    const TECHDOCS_CONFIG = {
-      passwordHash: 'LinuxBCN2026', // In production, use a hash comparison
-      sessionKey: 'techdocs_auth'
-    };
+  (function(){
+    var PW='LinuxBCN2026';
+    var SK='_td_a';
+    var gate=document.getElementById('td-gate');
+    var site=document.getElementById('td-site');
+    var form=document.getElementById('td-gate-form');
+    var inp=document.getElementById('td-gate-input');
+    var err=document.getElementById('td-gate-err');
+    if(sessionStorage.getItem(SK)==='1'){gate.style.display='none';site.classList.remove('td-hidden');}
+    else{
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        if(inp.value===PW){
+          sessionStorage.setItem(SK,'1');
+          gate.style.transition='opacity .3s';
+          gate.style.opacity='0';
+          setTimeout(function(){gate.style.display='none';site.classList.remove('td-hidden');},300);
+        }else{
+          err.classList.add('show');
+          inp.style.borderColor='#DC2626';
+          inp.value='';
+          inp.focus();
+          setTimeout(function(){err.classList.remove('show');inp.style.borderColor='';},2500);
+        }
+      });
+      setTimeout(function(){inp.focus();},200);
+    }
+  })();
   </script>
-  <script src="{{ "js/password-gate.js" | relURL }}" defer></script>
   <script src="{{ "js/main.js" | relURL }}" defer></script>
 </body>
 </html>
