@@ -10,6 +10,8 @@
   {{ hugo.Generator }}
 </head>
 <body class="techdoc">
+  {{ partial "password-gate" . }}
+
   <header class="techdoc-header">
     <div class="techdoc-header__inner">
       <a href="{{ .Site.BaseURL }}" class="techdoc-header__logo">
@@ -34,16 +36,24 @@
     </div>
   </header>
 
-  <main class="techdoc-main">
+  <main class="techdoc-main" id="mainContent" style="display: none;">
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="techdoc-footer">
+  <footer class="techdoc-footer" id="mainFooter" style="display: none;">
     <div class="techdoc-footer__inner">
       <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} — {{ i18n "powered_by" }} TechDocs LinuxBCN v{{ .Site.Params.deploy.version }}</p>
     </div>
   </footer>
 
+  <script>
+    // Password gate configuration
+    const TECHDOCS_CONFIG = {
+      passwordHash: 'LinuxBCN2026', // In production, use a hash comparison
+      sessionKey: 'techdocs_auth'
+    };
+  </script>
+  <script src="{{ "js/password-gate.js" | relURL }}" defer></script>
   <script src="{{ "js/main.js" | relURL }}" defer></script>
 </body>
 </html>
