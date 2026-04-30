@@ -7,7 +7,6 @@ revision: "1.0"
 approved_by: "Joan Linux"
 approved_date: "2026-04-30"
 legal_review: false
-draft: true
 weight: 1
 ---
 

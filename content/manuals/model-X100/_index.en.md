@@ -7,7 +7,6 @@ revision: "1.0"
 approved_by: "Joan Linux"
 approved_date: "2026-04-30"
 legal_review: false
-draft: true
 ---
 
 Complete technical documentation for the X100 model. This manual includes safety, installation, operation, and maintenance instructions in compliance with Machinery Directive 2006/42/EC.
