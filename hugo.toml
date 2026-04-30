@@ -1,4 +1,4 @@
-baseURL = 'https://techdocs.linuxbcn.com/'
+baseURL = 'https://112books.github.io/TechDocs/'
 languageCode = 'ca'
 title = 'TechDocs — Documentació Tècnica Validada'
 disableKinds = ['taxonomy']
