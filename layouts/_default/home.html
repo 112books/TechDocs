@@ -1,38 +1,265 @@
 {{ define "main" }}
-<section class="techdoc-hero">
-  <div class="techdoc-hero__content">
-    <h1>{{ i18n "site_title" }}</h1>
-    <p class="techdoc-hero__tagline">{{ i18n "site_tagline" }}</p>
-    <div class="techdoc-hero__actions">
-      <a href="{{ "manuals/" | relLangURL }}" class="techdoc-btn techdoc-btn--primary">
-        {{ i18n "manuals" }}
-      </a>
-      <a href="{{ "legal/" | relLangURL }}" class="techdoc-btn techdoc-btn--secondary">
-        {{ i18n "legal" }}
-      </a>
+<!-- HERO -->
+<section class="lp-hero">
+  <div class="lp-hero__bg"></div>
+  <div class="lp-hero__content">
+    <div class="lp-hero__badge">Alternativa lliure a SCHEMA ST4 / MadCap Flare / Paligo</div>
+    <h1>Documentació tècnica <span class="lp-hero__highlight">validada legalment</span>, sense llicències</h1>
+    <p class="lp-hero__subtitle">Sistema de gestió de documentació per a fabricants industrials que necessiten complir amb CE, ISO i directiva de maquinària — sense pagar 15.000€/any en llicències.</p>
+    <div class="lp-hero__actions">
+      <a href="#pricing" class="lp-btn lp-btn--primary">Veure paquets i preus</a>
+      <a href="#comparison" class="lp-btn lp-btn--ghost">Comparativa vs competència</a>
+    </div>
+    <div class="lp-hero__trust">
+      <span>✓ Sense llicències anuals</span>
+      <span>✓ Basat en estàndards oberts</span>
+      <span>✓ Auditables via Git</span>
+      <span>✓ Multiidioma natiu</span>
     </div>
   </div>
 </section>
 
-<section class="techdoc-section">
-  <h2>{{ i18n "manuals" }}</h2>
-  <div class="techdoc-grid">
-    {{ range where .Site.RegularPages "Section" "manuals" }}
-    <article class="techdoc-card">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Summary | plainify | truncate 120 }}</p>
-      {{ with .Params.applies_to }}
-      <div class="techdoc-card__models">
-        {{ range . }}
-        <span class="techdoc-badge">{{ . }}</span>
-        {{ end }}
+<!-- PROBLEM -->
+<section class="lp-section" id="problem">
+  <div class="lp-container">
+    <div class="lp-section__header">
+      <h2>El problema que resol</h2>
+      <p class="lp-section__subtitle">Si fabrica maquinària, necessita documentació tècnica. I la documentació tècnica ha de ser <strong>legalment vàlida</strong>.</p>
+    </div>
+    <div class="lp-grid lp-grid--3">
+      <div class="lp-card lp-card--feature">
+        <div class="lp-card__icon">📋</div>
+        <h3>Directiva de Maquinària 2006/42/CE</h3>
+        <p>Exigeix manuals en l'idioma del país d'ús, amb versions, revisions i traçabilitat d'aprovacions. Conservació durant 10 anys.</p>
       </div>
-      {{ end }}
-      {{ with .Params.revision }}
-      <div class="techdoc-card__revision">{{ i18n "revision" }} {{ . }}</div>
-      {{ end }}
-    </article>
-    {{ end }}
+      <div class="lp-card lp-card--feature">
+        <div class="lp-card__icon">🏭</div>
+        <h3>Auditories ISO 9001</h3>
+        <p>Control documental estricte: versió actual vs. obsoleta, registre de revisions, accés controlat per modificar i aprovar.</p>
+      </div>
+      <div class="lp-card lp-card--feature">
+        <div class="lp-card__icon">💰</div>
+        <h3>Llicències de 15.000–50.000€/any</h3>
+        <p>SCHEMA ST4, MadCap Flare i Paligo són excel·lents — però impagables per a una PYME industrial de 10–200 treballadors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="lp-section lp-section--alt" id="comparison">
+  <div class="lp-container">
+    <div class="lp-section__header">
+      <h2>Comparativa amb la competència</h2>
+      <p class="lp-section__subtitle">Mateixes funcionalitats, sense llicències ni dependència de proveïdors.</p>
+    </div>
+    <div class="lp-table-wrap">
+      <table class="lp-table">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>SCHEMA ST4</th>
+            <th>Paligo</th>
+            <th>MadCap Flare</th>
+            <th class="lp-table__highlight">TechDocs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Preu orientatiu</strong></td>
+            <td>15.000–50.000€/any</td>
+            <td>3.000–12.000€/any</td>
+            <td>4.000–8.000€/any</td>
+            <td class="lp-table__highlight"><strong>3.000–8.000€</strong> (única vegada)</td>
+          </tr>
+          <tr>
+            <td>Llicència anual</td>
+            <td>Obligatòria</td>
+            <td>SaaS (subscripció)</td>
+            <td>Renovació</td>
+            <td class="lp-table__highlight"><strong>Cap</strong></td>
+          </tr>
+          <tr>
+            <td>Multiidioma</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td class="lp-table__highlight">✓ (natiu Hugo i18n)</td>
+          </tr>
+          <tr>
+            <td>Control de versions</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>Limitat</td>
+            <td class="lp-table__highlight">✓ (Git complet)</td>
+          </tr>
+          <tr>
+            <td>PDF signat</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td class="lp-table__highlight">✓ (Pandoc)</td>
+          </tr>
+          <tr>
+            <td>Portal web</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td class="lp-table__highlight">✓ (Hugo estàtic)</td>
+          </tr>
+          <tr>
+            <td>Propietari del sistema</td>
+            <td>✗ (llicència)</td>
+            <td>✗ (SaaS)</td>
+            <td>✗ (llicència)</td>
+            <td class="lp-table__highlight"><strong>✓ (codi obert)</strong></td>
+          </tr>
+          <tr>
+            <td>Autoallotjable</td>
+            <td>✗</td>
+            <td>✗</td>
+            <td>✗</td>
+            <td class="lp-table__highlight"><strong>✓</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="lp-section" id="pricing">
+  <div class="lp-container">
+    <div class="lp-section__header">
+      <h2>Paquets d'implementació</h2>
+      <p class="lp-section__subtitle">Pagament únic. Sense llicències recurrents obligatòries.</p>
+    </div>
+    <div class="lp-grid lp-grid--3">
+      <div class="lp-card lp-card--pricing">
+        <div class="lp-pricing__header">
+          <h3>Starter</h3>
+          <div class="lp-pricing__price">2.500–3.500€</div>
+          <p class="lp-pricing__period">Pagament únic</p>
+        </div>
+        <ul class="lp-pricing__features">
+          <li>✓ Hugo base configurat</li>
+          <li>✓ 1 idioma</li>
+          <li>✓ Generació de PDF</li>
+          <li>✓ Decap CMS (editor web)</li>
+          <li>✓ Deploy automàtic</li>
+          <li>✓ Tema visual professional</li>
+          <li>—</li>
+          <li>—</li>
+        </ul>
+        <a href="mailto:joan@linuxbcn.com" class="lp-btn lp-btn--outline">Sol·licitar pressupost</a>
+      </div>
+      <div class="lp-card lp-card--pricing lp-card--featured">
+        <div class="lp-card__badge">Recomanat</div>
+        <div class="lp-pricing__header">
+          <h3>Professional</h3>
+          <div class="lp-pricing__price">4.500–6.000€</div>
+          <p class="lp-pricing__period">Pagament únic</p>
+        </div>
+        <ul class="lp-pricing__features">
+          <li>✓ Tot el pla Starter</li>
+          <li>✓ <strong>2 idiomes</strong></li>
+          <li>✓ <strong>Gestió de variants</strong> de producte</li>
+          <li>✓ <strong>Registre d'aprovacions</strong></li>
+          <li>✓ Shortcodes tècnics complets</li>
+          <li>✓ Cerca estàtica (Pagefind)</li>
+          <li>✓ Formació bàsica inclosa</li>
+          <li>—</li>
+        </ul>
+        <a href="mailto:joan@linuxbcn.com" class="lp-btn lp-btn--primary">Sol·licitar pressupost</a>
+      </div>
+      <div class="lp-card lp-card--pricing">
+        <div class="lp-pricing__header">
+          <h3>Legal</h3>
+          <div class="lp-pricing__price">7.000–9.000€</div>
+          <p class="lp-pricing__period">Pagament únic</p>
+        </div>
+        <ul class="lp-pricing__features">
+          <li>✓ Tot el pla Professional</li>
+          <li>✓ <strong>PDF signat digitalment</strong></li>
+          <li>✓ <strong>Dashboard de traduccions</strong></li>
+          <li>✓ <strong>Exportació XML</strong> (DITA Light)</li>
+          <li>✓ Formació completa de l'equip</li>
+          <li>✓ 3 mesos d'acompanyament</li>
+          <li>✓ Validació per auditor CE</li>
+          <li>✓ White-label disponible</li>
+        </ul>
+        <a href="mailto:joan@linuxbcn.com" class="lp-btn lp-btn--outline">Sol·licitar pressupost</a>
+      </div>
+    </div>
+    <div class="lp-pricing__note">
+      <p><strong>Manteniment opcional:</strong> 150–300€/mes (hosting + actualitzacions + suport tècnic). El client no paga llicències — només el que necessita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO / CASE STUDY -->
+<section class="lp-section lp-section--dark" id="demo">
+  <div class="lp-container">
+    <div class="lp-section__header lp-section__header--light">
+      <h2>Veur-lo en acció</h2>
+      <p class="lp-section__subtitle">El manual SECO SV 1003/1005 D — bomba de buit industrial — completament estructurat, multiidioma i amb diagrames tècnics.</p>
+    </div>
+    <div class="lp-demo">
+      <div class="lp-demo__preview">
+        <div class="lp-demo__screen">
+          <div class="lp-demo__browser-bar">
+            <span class="lp-demo__dot lp-demo__dot--red"></span>
+            <span class="lp-demo__dot lp-demo__dot--yellow"></span>
+            <span class="lp-demo__dot lp-demo__dot--green"></span>
+            <span class="lp-demo__url">112books.github.io/TechDocs/es/manuals/seco-sv-1003/</span>
+          </div>
+          <div class="lp-demo__content">
+            <div class="lp-demo__sidebar">
+              <div class="lp-demo__sidebar-title">Contenido</div>
+              <div class="lp-demo__sidebar-item lp-demo__sidebar-item--active">1. Seguridad</div>
+              <div class="lp-demo__sidebar-item">2. Descripción del producto</div>
+              <div class="lp-demo__sidebar-item">5. Instalación</div>
+              <div class="lp-demo__sidebar-item">6. Conexión eléctrica</div>
+              <div class="lp-demo__sidebar-item">7. Puesta en marcha</div>
+              <div class="lp-demo__sidebar-item">8. Mantenimiento</div>
+              <div class="lp-demo__sidebar-item">12. Resolución de problemas</div>
+              <div class="lp-demo__sidebar-item">13. Datos técnicos</div>
+            </div>
+            <div class="lp-demo__main">
+              <h4>Manual de instrucciones — SECO SV 1003 D / SV 1005 D</h4>
+              <p style="opacity:0.7">Bombas de vacío de paletas rotativas de funcionamiento en seco.</p>
+              <div style="background:#FEF3C7;border-left:4px solid #D97706;padding:0.75rem;margin:1rem 0;border-radius:0 0.375rem 0.375rem 0;">
+                <strong style="color:#92400E">⚠ ADVERTENCIA</strong>
+                <p style="margin:0.25rem 0 0;color:#78350f;font-size:0.85rem">En caso de uso indebido previsible fuera del uso previsto de la máquina. Existe riesgo de lesiones.</p>
+              </div>
+              <div style="display:flex;gap:1rem;margin:1rem 0;">
+                <span style="background:#16A34A;color:white;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem">SV 1003 D</span>
+                <span style="background:#16A34A;color:white;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem">SV 1005 D</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lp-demo__actions">
+        <a href="https://112books.github.io/TechDocs/" class="lp-btn lp-btn--primary" target="_blank">Provar la demo →</a>
+        <p style="font-size:0.85rem;opacity:0.6;margin-top:0.5rem">Contrasenya: LinuxBCN2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="lp-section lp-section--cta" id="contact">
+  <div class="lp-container">
+    <h2>Preparat per deixar de pagar llicències?</h2>
+    <p>Parlem sobre el teu cas concret. Sense compromís.</p>
+    <div class="lp-cta__actions">
+      <a href="mailto:joan@linuxbcn.com" class="lp-btn lp-btn--white">Contactar ara</a>
+    </div>
+    <div class="lp-cta__contacts">
+      <span>Joan Linux — <a href="https://linuxbcn.com">linuxbcn.com</a></span>
+      <span>Carlos Campo — <a href="https://estategiadelcontenido.com">estategiadelcontenido.com</a></span>
+    </div>
   </div>
 </section>
 {{ end }}

@@ -59,9 +59,16 @@
           <span class="techdoc-header__brand">{{ .Site.Params.brand.name }}</span>
         </a>
         <nav class="techdoc-header__nav">
+          {{ if .IsHome }}
+          <a href="#problem">Problema</a>
+          <a href="#comparison">Comparativa</a>
+          <a href="#pricing">Preus</a>
+          <a href="#demo">Demo</a>
+          {{ else }}
           <a href="{{ "manuals/" | relLangURL }}">{{ i18n "manuals" }}</a>
           <a href="{{ "warnings/" | relLangURL }}">{{ i18n "warnings" }}</a>
           <a href="{{ "legal/" | relLangURL }}">{{ i18n "legal" }}</a>
+          {{ end }}
         </nav>
         <div class="techdoc-header__actions">
           {{ if hugo.IsMultilingual }}
@@ -83,7 +90,11 @@
 
     <footer class="techdoc-footer">
       <div class="techdoc-footer__inner">
+        {{ if .IsHome }}
+        <p>TechDocs by <a href="https://linuxbcn.com" style="color:var(--color-blue)">LinuxBCN</a> / <a href="https://estategiadelcontenido.com" style="color:var(--color-blue)">estategiadelcontenido.com</a> — v{{ .Site.Params.deploy.version }}</p>
+        {{ else }}
         <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} &mdash; {{ i18n "powered_by" }} TechDocs LinuxBCN v{{ .Site.Params.deploy.version }}</p>
+        {{ end }}
       </div>
     </footer>
   </div>
