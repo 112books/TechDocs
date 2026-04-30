@@ -1,0 +1,19 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $width := .Get "width" | default "100%" -}}
+{{- $numbered := .Get "numbered" -}}
+{{- $align := .Get "align" | default "center" -}}
+<figure class="techdoc-figure" style="text-align: {{ $align }}; margin: 2rem 0;">
+  <img
+    src="{{ if strings.HasPrefix $src "http" }}{{ $src }}{{ else }}{{ $src | relURL }}{{ end }}"
+    alt="{{ $alt }}"
+    style="max-width: {{ $width }}; height: auto; border: 1px solid #E2E8F0; border-radius: 0.375rem;"
+    loading="lazy"
+  />
+  {{ if or $caption $numbered }}
+  <figcaption class="techdoc-figure__caption" style="font-size: 0.8rem; color: #64748B; margin-top: 0.5rem; font-style: italic;">
+    {{ if $numbered }}Figura {{ $numbered }}.{{ end }} {{ $caption }}
+  </figcaption>
+  {{ end }}
+</figure>

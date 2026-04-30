@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" fill="none" font-family="Arial, sans-serif">
+  <rect width="500" height="300" fill="#F8FAFC"/>
+  <text x="250" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B2A4A">Esquema eléctrico — Motor monofásico</text>
+  <!-- Power lines -->
+  <text x="50" y="60" fill="#DC2626" font-size="11" font-weight="bold">L1</text>
+  <text x="50" y="160" fill="#1E40AF" font-size="11" font-weight="bold">N</text>
+  <text x="50" y="210" fill="#16A34A" font-size="11" font-weight="bold">PE</text>
+  <!-- Lines -->
+  <line x1="70" y1="56" x2="150" y2="56" stroke="#DC2626" stroke-width="2"/>
+  <line x1="70" y1="156" x2="150" y2="156" stroke="#1E40AF" stroke-width="2"/>
+  <!-- Thermal protector -->
+  <rect x="150" y="45" width="100" height="22" rx="3" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+  <text x="200" y="60" text-anchor="middle" fill="#92400E" font-size="8">Tw (Prot. térmico)</text>
+  <line x1="250" y1="56" x2="320" y2="56" stroke="#DC2626" stroke-width="2"/>
+  <!-- Capacitor -->
+  <rect x="150" y="95" width="100" height="22" rx="3" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
+  <text x="200" y="110" text-anchor="middle" fill="#1E40AF" font-size="8">C (Condensador)</text>
+  <line x1="200" y1="117" x2="200" y2="140" stroke="#D97706" stroke-width="1"/>
+  <!-- Motor windings -->
+  <rect x="320" y="40" width="120" height="32" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+  <text x="380" y="55" text-anchor="middle" fill="#15803D" font-size="8">Ha (Fase principal)</text>
+  <text x="380" y="67" text-anchor="middle" fill="#64748B" font-size="7">bk / Negro</text>
+  <line x1="250" y1="56" x2="320" y2="56" stroke="#DC2626" stroke-width="1.5"/>
+  <!-- Hi winding -->
+  <rect x="320" y="85" width="120" height="32" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+  <text x="380" y="100" text-anchor="middle" fill="#15803D" font-size="8">Hi (Fase auxiliar)</text>
+  <text x="380" y="112" text-anchor="middle" fill="#64748B" font-size="7">bl / Azul</text>
+  <line x1="200" y1="140" x2="320" y2="100" stroke="#D97706" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- PE line -->
+  <line x1="70" y1="206" x2="440" y2="206" stroke="#16A34A" stroke-width="2"/>
+  <text x="440" y="210" fill="#16A34A" font-size="9">⏚ Tierra</text>
+  <!-- Legend -->
+  <rect x="50" y="240" width="400" height="50" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="70" y="258" fill="#64748B" font-size="8">Ha = Fase principal  |  Hi = Fase auxiliar  |  Tw = Protector térmico</text>
+  <text x="70" y="275" fill="#64748B" font-size="8">C = Condensador permanente  |  bk = Negro  |  br = Marrón  |  bl = Azul</text>
+</svg>

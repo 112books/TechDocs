@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none" font-family="Arial, sans-serif">
+  <rect width="500" height="350" fill="#F8FAFC"/>
+  <text x="250" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B2A4A">Mantenimiento — Cambio de paletas y filtros internos</text>
+  <!-- Step 1 -->
+  <rect x="40" y="50" width="200" height="120" rx="6" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="55" y="70" fill="#1B2A4A" font-size="10" font-weight="bold">Paso 1: Verificar desgaste</text>
+  <!-- Measurement illustration -->
+  <rect x="60" y="80" width="160" height="70" rx="3" fill="#F1F5F9"/>
+  <rect x="80" y="90" width="40" height="50" rx="2" fill="#64748B"/>
+  <text x="100" y="118" text-anchor="middle" fill="white" font-size="8">VA</text>
+  <line x1="130" y1="95" x2="130" y2="135" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="125" y1="95" x2="135" y2="95" stroke="#DC2626" stroke-width="1"/>
+  <line x1="125" y1="135" x2="135" y2="135" stroke="#DC2626" stroke-width="1"/>
+  <text x="155" y="108" fill="#DC2626" font-size="8">H ≥ 14mm</text>
+  <text x="155" y="120" fill="#DC2626" font-size="8">(SV 1003 D)</text>
+  <text x="155" y="135" fill="#64748B" font-size="7">Llave hex. 4mm</text>
+  <!-- Step 2 -->
+  <rect x="260" y="50" width="200" height="120" rx="6" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="275" y="70" fill="#1B2A4A" font-size="10" font-weight="bold">Paso 2: Sustituir paletas</text>
+  <rect x="280" y="80" width="160" height="70" rx="3" fill="#F1F5F9"/>
+  <rect x="300" y="90" width="20" height="40" rx="1" fill="#16A34A"/>
+  <text x="310" y="113" text-anchor="middle" fill="white" font-size="7">VA</text>
+  <rect x="325" y="90" width="20" height="40" rx="1" fill="#16A34A"/>
+  <text x="335" y="113" text-anchor="middle" fill="white" font-size="7">VA</text>
+  <rect x="350" y="90" width="20" height="40" rx="1" fill="#16A34A"/>
+  <text x="360" y="113" text-anchor="middle" fill="white" font-size="7">VA</text>
+  <text x="360" y="145" text-anchor="middle" fill="#64748B" font-size="7">3 paletas (kit original Busch)</text>
+  <!-- Step 3 -->
+  <rect x="150" y="185" width="200" height="120" rx="6" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="165" y="205" fill="#1B2A4A" font-size="10" font-weight="bold">Paso 3: Cambiar arandelas FW</text>
+  <rect x="170" y="215" width="160" height="70" rx="3" fill="#F1F5F9"/>
+  <circle cx="210" cy="245" r="12" fill="#2563EB" opacity="0.3"/>
+  <circle cx="210" cy="245" r="5" fill="#2563EB"/>
+  <text x="210" y="248" text-anchor="middle" fill="white" font-size="6">FW</text>
+  <circle cx="260" cy="245" r="12" fill="#2563EB" opacity="0.3"/>
+  <circle cx="260" cy="245" r="5" fill="#2563EB"/>
+  <text x="260" y="248" text-anchor="middle" fill="white" font-size="6">FW</text>
+  <text x="300" y="248" fill="#64748B" font-size="7">Alicates 3mm</text>
+  <line x1="272" y1="245" x2="288" y2="245" stroke="#64748B" stroke-width="1"/>
+  <!-- Legend -->
+  <rect x="50" y="320" width="400" height="25" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
+  <text x="250" y="336" text-anchor="middle" fill="#1E40AF" font-size="8">Intervalo: cada 3000 horas — Ref. Busch: VA 0722 104 640 (SV1003) / 0722 141 943 (SV1005) | FW 0537 138 479</text>
+</svg>
