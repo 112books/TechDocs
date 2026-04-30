@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="techdoc-section">
+  <header class="techdoc-section__header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="techdoc-section__description">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  <div class="techdoc-grid">
+    {{ range .Pages }}
+    <article class="techdoc-card">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Summary | plainify | truncate 120 }}</p>
+      {{ with .Params.applies_to }}
+      <div class="techdoc-card__models">
+        {{ range . }}
+        <span class="techdoc-badge">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ with .Params.revision }}
+      <div class="techdoc-card__revision">{{ i18n "revision" }} {{ . }}</div>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

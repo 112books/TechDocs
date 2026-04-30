@@ -1,0 +1,71 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "TechDocs: crear '{{collection}}' — '{{slug}}'"
+    update: "TechDocs: actualitzar '{{collection}}' — '{{slug}}'"
+    delete: "TechDocs: eliminar '{{collection}}' — '{{slug}}'"
+    uploadMedia: "TechDocs: pujar media '{{path}}'"
+
+publish_mode: editorial_workflow
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "ca"
+
+collections:
+  - name: "manuals"
+    label: "Manuals Tècnics"
+    label_singular: "Manual"
+    folder: "content/manuals"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Títol", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Esborrany", name: "draft", widget: "boolean", default: true }
+      - { label: "Aplicable a", name: "applies_to", widget: "list", default: [] }
+      - { label: "No aplicable a", name: "not_applies_to", widget: "list", default: [] }
+      - { label: "Revisió", name: "revision", widget: "string", default: "1.0" }
+      - { label: "Aprovat per", name: "approved_by", widget: "string" }
+      - { label: "Data aprovació", name: "approved_date", widget: "date" }
+      - { label: "Revisió legal", name: "legal_review", widget: "boolean", default: false }
+      - { label: "Ordre", name: "weight", widget: "number", default: 0 }
+      - { label: "Contingut", name: "body", widget: "markdown" }
+
+  - name: "warnings"
+    label: "Avissos de Seguretat"
+    label_singular: "Avís"
+    folder: "content/warnings"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Títol", name: "title", widget: "string" }
+      - { label: "Tipus", name: "type", widget: "select", options: ["warning", "danger", "caution"] }
+      - { label: "Categoria", name: "category", widget: "select", options: ["electrical", "mechanical", "chemical", "thermal", "general"] }
+      - { label: "Severitat", name: "severity", widget: "select", options: ["critical", "high", "medium", "low"] }
+      - { label: "Contingut", name: "body", widget: "markdown" }
+
+  - name: "legal"
+    label: "Documentació Legal"
+    label_singular: "Document"
+    folder: "content/legal"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Títol", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Tipus de document", name: "document_type", widget: "select", options: ["declaration", "certificate"] }
+      - { label: "Aplicable a", name: "applies_to", widget: "list", default: [] }
+      - { label: "Revisió", name: "revision", widget: "string", default: "1.0" }
+      - { label: "Aprovat per", name: "approved_by", widget: "string" }
+      - { label: "Data aprovació", name: "approved_date", widget: "date" }
+      - { label: "Revisió legal", name: "legal_review", widget: "boolean", default: true }
+      - { label: "Contingut", name: "body", widget: "markdown" }

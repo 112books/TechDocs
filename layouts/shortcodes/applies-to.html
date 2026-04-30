@@ -1,0 +1,16 @@
+{{- $models := .Get "models" | split "," -}}
+<div class="techdoc-applies-to" style="background: #F0FDF4; border: 1px solid #86EFAC; padding: 0.75rem 1rem; margin: 1.5rem 0; border-radius: 0.375rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span style="color: #16A34A; font-weight: bold;">✓</span>
+    <strong style="color: #16A34A; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">
+      {{ i18n "applies_to" }}
+    </strong>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+    {{- range $models -}}
+      <span style="background: #16A34A; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">
+        {{ trim . " " }}
+      </span>
+    {{- end -}}
+  </div>
+</div>

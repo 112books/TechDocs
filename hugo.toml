@@ -1,0 +1,55 @@
+baseURL = 'https://techdocs.linuxbcn.com/'
+languageCode = 'ca'
+title = 'TechDocs — Documentació Tècnica Validada'
+disableKinds = ['taxonomy']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'github'
+    lineNos = true
+    lineNumbersInTable = false
+
+[outputs]
+  home = ['HTML']
+  page = ['HTML']
+  section = ['HTML']
+
+[params]
+  description = 'Sistema de gestió de documentació tècnica estructurada per a pymes industrials'
+  author = 'LinuxBCN / estategiadelcontenido.com'
+  logo = '/images/logo.svg'
+  [params.brand]
+    name = 'TechDocs'
+    tagline = 'Documentació tècnica validada legalment'
+  [params.pdf]
+    paperSize = 'A4'
+    header = true
+    footer = true
+    companyName = ''
+  [params.deploy]
+    version = '1.0.0-mvp'
+
+[languages]
+  [languages.ca]
+    languageName = 'Català'
+    weight = 1
+    [languages.ca.params]
+      langDirection = 'ltr'
+  [languages.es]
+    languageName = 'Castellano'
+    weight = 2
+    [languages.es.params]
+      langDirection = 'ltr'
+  [languages.en]
+    languageName = 'English'
+    weight = 3
+    [languages.en.params]
+      langDirection = 'ltr'
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.120.0'

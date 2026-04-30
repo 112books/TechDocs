@@ -1,0 +1,200 @@
+/* TechDocs — Technical Documentation Theme */
+/* Base: LinuxBCN / estategiadelcontenido.com */
+
+:root {
+  --color-navy: #1B2A4A;
+  --color-blue: #2563EB;
+  --color-green: #16A34A;
+  --color-amber: #D97706;
+  --color-red: #DC2626;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --max-width: 48rem;
+  --header-height: 4rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-gray-800);
+  background: #fff;
+}
+
+/* Header */
+.techdoc-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-navy);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.techdoc-header__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.techdoc-header__logo { text-decoration: none; }
+.techdoc-header__brand { color: #fff; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.025em; }
+
+.techdoc-header__nav { display: flex; gap: 1.5rem; margin-left: auto; }
+.techdoc-header__nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.techdoc-header__nav a:hover { color: #fff; }
+
+.techdoc-header__actions { margin-left: auto; }
+
+.techdoc-lang-selector {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.techdoc-lang-selector option { background: var(--color-navy); color: #fff; }
+
+/* Main content */
+.techdoc-main { min-height: calc(100vh - var(--header-height) - 4rem); }
+
+/* Hero */
+.techdoc-hero {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #2C3E6B 100%);
+  color: #fff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.techdoc-hero__content { max-width: var(--max-width); margin: 0 auto; }
+.techdoc-hero h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 1rem; }
+.techdoc-hero__tagline { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+.techdoc-hero__actions { display: flex; gap: 1rem; justify-content: center; }
+
+.techdoc-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.techdoc-btn--primary { background: #fff; color: var(--color-navy); }
+.techdoc-btn--primary:hover { background: var(--color-gray-100); }
+.techdoc-btn--secondary { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+.techdoc-btn--secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Sections */
+.techdoc-section { max-width: 72rem; margin: 0 auto; padding: 3rem 1.5rem; }
+.techdoc-section__header { margin-bottom: 2rem; }
+.techdoc-section__header h1 { font-size: 2rem; font-weight: 700; color: var(--color-navy); }
+.techdoc-section__description { color: var(--color-gray-600); margin-top: 0.5rem; }
+
+/* Grid & Cards */
+.techdoc-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); }
+
+.techdoc-card {
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.techdoc-card:hover { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-color: var(--color-gray-300); }
+.techdoc-card h3 { margin-bottom: 0.75rem; }
+.techdoc-card h3 a { color: var(--color-navy); text-decoration: none; }
+.techdoc-card h3 a:hover { color: var(--color-blue); }
+.techdoc-card p { color: var(--color-gray-600); font-size: 0.875rem; margin-bottom: 1rem; }
+
+.techdoc-card__models { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.techdoc-badge {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.techdoc-card__revision { font-size: 0.75rem; color: var(--color-gray-600); }
+
+/* Article */
+.techdoc-article { max-width: var(--max-width); margin: 0 auto; padding: 3rem 1.5rem; }
+.techdoc-article__header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--color-gray-200); }
+.techdoc-article__header h1 { font-size: 2rem; font-weight: 700; color: var(--color-navy); margin-bottom: 1rem; }
+.techdoc-article__meta { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--color-gray-600); }
+
+.techdoc-toc {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.techdoc-toc h3 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-navy); margin-bottom: 1rem; }
+.techdoc-toc ul { list-style: none; }
+.techdoc-toc li { margin-bottom: 0.5rem; }
+.techdoc-toc a { color: var(--color-gray-700); text-decoration: none; font-size: 0.875rem; }
+.techdoc-toc a:hover { color: var(--color-blue); }
+
+.techdoc-article__content { line-height: 1.75; }
+.techdoc-article__content h2 { font-size: 1.5rem; font-weight: 700; color: var(--color-navy); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gray-200); }
+.techdoc-article__content h3 { font-size: 1.25rem; font-weight: 600; color: var(--color-gray-800); margin: 2rem 0 0.75rem; }
+.techdoc-article__content p { margin-bottom: 1.25rem; }
+.techdoc-article__content ul, .techdoc-article__content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+.techdoc-article__content li { margin-bottom: 0.5rem; }
+.techdoc-article__content code { background: var(--color-gray-100); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-family: var(--font-mono); font-size: 0.875em; }
+.techdoc-article__content pre { background: var(--color-gray-900); color: #E5E7EB; padding: 1.25rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+.techdoc-article__content pre code { background: none; padding: 0; color: inherit; }
+.techdoc-article__content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.techdoc-article__content th, .techdoc-article__content td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--color-gray-200); }
+.techdoc-article__content th { background: var(--color-gray-50); font-weight: 600; }
+
+.techdoc-article__footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid var(--color-gray-200); display: flex; justify-content: space-between; gap: 1rem; }
+.techdoc-nav-link { color: var(--color-blue); text-decoration: none; font-size: 0.875rem; font-weight: 500; }
+.techdoc-nav-link:hover { text-decoration: underline; }
+
+/* Footer */
+.techdoc-footer { background: var(--color-gray-50); border-top: 1px solid var(--color-gray-200); padding: 1.5rem; text-align: center; font-size: 0.875rem; color: var(--color-gray-600); }
+
+/* Print / A4 styles */
+@media print {
+  .techdoc-header, .techdoc-footer, .techdoc-hero__actions, .techdoc-lang-selector { display: none !important; }
+  .techdoc-article { max-width: 100%; padding: 0; }
+  .techdoc-article__header { page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; }
+  .techdoc-warning, .techdoc-note { page-break-inside: avoid; }
+  body { font-size: 11pt; line-height: 1.5; }
+  @page { size: A4; margin: 2cm; }
+}
+
+/* Responsive */
+@media (max-width: 48rem) {
+  .techdoc-header__inner { flex-wrap: wrap; height: auto; padding: 0.75rem 1rem; }
+  .techdoc-header__nav { order: 3; width: 100%; margin-left: 0; margin-top: 0.75rem; }
+  .techdoc-hero h1 { font-size: 1.75rem; }
+  .techdoc-hero__actions { flex-direction: column; }
+  .techdoc-grid { grid-template-columns: 1fr; }
+  .techdoc-article__meta { flex-direction: column; gap: 0.5rem; }
+  .techdoc-article__footer { flex-direction: column; }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Params.langDirection | default "ltr" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="TechDocs by LinuxBCN">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ i18n "site_tagline" }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  {{ hugo.Generator }}
+</head>
+<body class="techdoc">
+  <header class="techdoc-header">
+    <div class="techdoc-header__inner">
+      <a href="{{ .Site.BaseURL }}" class="techdoc-header__logo">
+        <span class="techdoc-header__brand">{{ .Site.Params.brand.name }}</span>
+      </a>
+      <nav class="techdoc-header__nav">
+        <a href="{{ "manuals/" | relLangURL }}">{{ i18n "manuals" }}</a>
+        <a href="{{ "warnings/" | relLangURL }}">{{ i18n "warnings" }}</a>
+        <a href="{{ "legal/" | relLangURL }}">{{ i18n "legal" }}</a>
+      </nav>
+      <div class="techdoc-header__actions">
+        {{ if hugo.IsMultilingual }}
+        <select class="techdoc-lang-selector" onchange="location = this.value;">
+          {{ range .Site.Languages }}
+          <option value="{{ .Lang | relLangURL }}" {{ if eq .Lang $.Site.Language.Lang }}selected{{ end }}>
+            {{ .LanguageName }}
+          </option>
+          {{ end }}
+        </select>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+
+  <main class="techdoc-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="techdoc-footer">
+    <div class="techdoc-footer__inner">
+      <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} — {{ i18n "powered_by" }} TechDocs LinuxBCN v{{ .Site.Params.deploy.version }}</p>
+    </div>
+  </footer>
+
+  <script src="{{ "js/main.js" | relURL }}" defer></script>
+</body>
+</html>

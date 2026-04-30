@@ -1,0 +1,9 @@
+{{- $number := .Get "number" -}}
+<div class="techdoc-step" style="display: flex; gap: 1rem; margin: 1rem 0; padding: 0.75rem 0;">
+  <div class="techdoc-step__number" style="flex-shrink: 0; width: 2rem; height: 2rem; background: #1B2A4A; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.875rem;">
+    {{ $number }}
+  </div>
+  <div class="techdoc-step__content" style="flex: 1;">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

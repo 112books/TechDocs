@@ -1,0 +1,35 @@
+{{- $approvedBy := .Page.Params.approved_by | default (.Get "approved_by") -}}
+{{- $approvedDate := .Page.Params.approved_date | default (.Get "approved_date") -}}
+{{- $revision := .Page.Params.revision | default (.Get "revision") -}}
+{{- $legalReview := .Page.Params.legal_review | default false -}}
+<div class="techdoc-legal-approval" style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1rem 1.25rem; margin: 2rem 0; border-radius: 0.375rem;">
+  <div style="border-bottom: 1px solid #E2E8F0; padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+    <strong style="color: #1B2A4A; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">
+      📋 {{ i18n "legal_review" | default "Legal Approval" }}
+    </strong>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+    <div>
+      <span style="color: #64748B;">{{ i18n "revision" }}:</span>
+      <strong style="color: #1E293B;">{{ $revision }}</strong>
+    </div>
+    {{ with $approvedBy }}
+    <div>
+      <span style="color: #64748B;">{{ i18n "approved_by" }}:</span>
+      <strong style="color: #1E293B;">{{ . }}</strong>
+    </div>
+    {{ end }}
+    {{ with $approvedDate }}
+    <div>
+      <span style="color: #64748B;">{{ i18n "approved_date" }}:</span>
+      <strong style="color: #1E293B;">{{ . }}</strong>
+    </div>
+    {{ end }}
+    <div>
+      <span style="color: #64748B;">{{ i18n "legal_review" }}:</span>
+      <strong style="color: {{ if $legalReview }}#16A34A{{ else }}#DC2626{{ end }};">
+        {{ if $legalReview }}✓ {{ i18n "warning" | default "Completed" }}{{ else }}✗ {{ i18n "note" | default "Pending" }}{{ end }}
+      </strong>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="techdoc-hero">
+  <div class="techdoc-hero__content">
+    <h1>{{ i18n "site_title" }}</h1>
+    <p class="techdoc-hero__tagline">{{ i18n "site_tagline" }}</p>
+    <div class="techdoc-hero__actions">
+      <a href="{{ "manuals/" | relLangURL }}" class="techdoc-btn techdoc-btn--primary">
+        {{ i18n "manuals" }}
+      </a>
+      <a href="{{ "legal/" | relLangURL }}" class="techdoc-btn techdoc-btn--secondary">
+        {{ i18n "legal" }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="techdoc-section">
+  <h2>{{ i18n "manuals" }}</h2>
+  <div class="techdoc-grid">
+    {{ range where .Site.RegularPages "Section" "manuals" }}
+    <article class="techdoc-card">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Summary | plainify | truncate 120 }}</p>
+      {{ with .Params.applies_to }}
+      <div class="techdoc-card__models">
+        {{ range . }}
+        <span class="techdoc-badge">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ with .Params.revision }}
+      <div class="techdoc-card__revision">{{ i18n "revision" }} {{ . }}</div>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

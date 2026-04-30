@@ -1,0 +1,46 @@
+{{ define "main" }}
+<article class="techdoc-article">
+  <header class="techdoc-article__header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.revision }}
+    <div class="techdoc-article__meta">
+      <span class="techdoc-article__revision">{{ i18n "revision" }} {{ . }}</span>
+      {{ with $.Params.approved_by }}
+      <span class="techdoc-article__approved">{{ i18n "approved_by" }}: {{ . }}</span>
+      {{ end }}
+      {{ with $.Params.approved_date }}
+      <span class="techdoc-article__date">{{ i18n "approved_date" }}: {{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{ with .Params.applies_to }}
+  {{ partial "model-selector" . }}
+  {{ end }}
+
+  <nav class="techdoc-toc">
+    <h3>{{ i18n "table_of_contents" }}</h3>
+    {{ .TableOfContents }}
+  </nav>
+
+  <div class="techdoc-article__content">
+    {{ .Content }}
+  </div>
+
+  {{ partial "legal-approval-block" . }}
+
+  <footer class="techdoc-article__footer">
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" class="techdoc-nav-link techdoc-nav-link--prev">
+      ← {{ i18n "previous" }}: {{ .Title }}
+    </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="techdoc-nav-link techdoc-nav-link--next">
+      {{ i18n "next" }}: {{ .Title }} →
+    </a>
+    {{ end }}
+  </footer>
+</article>
+{{ end }}

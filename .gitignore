@@ -1,0 +1,28 @@
+# Hugo
+public/
+resources/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+
+# PDF outputs (generated)
+*.pdf
+!pandoc-*.pdf
+
+# Logs
+*.log
+
+# Temporary
+tmp/
+temp/

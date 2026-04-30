@@ -1,0 +1,22 @@
+# Pandoc metadata for TechDocs PDF generation
+title: "TechDocs — Technical Document"
+author: "LinuxBCN"
+date: "2026-04-30"
+lang: ca
+documentclass: article
+papersize: A4
+fontsize: 11pt
+geometry:
+  - top=2cm
+  - bottom=2cm
+  - left=2cm
+  - right=2cm
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[L]{\small TechDocs — LinuxBCN}
+  \fancyhead[R]{\small \thepage}
+  \fancyfoot[C]{\small Document confidencial — Ús intern}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
