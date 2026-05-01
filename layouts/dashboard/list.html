@@ -1,0 +1,81 @@
+{{ define "main" }}
+<article class="techdoc-article">
+  <header class="techdoc-article__header">
+    <h1>{{ i18n "document_history" | default "Estat Documental" }}</h1>
+    <p style="color: var(--color-amber); font-size: 0.95rem;">Vista general del sistema de documentació</p>
+  </header>
+
+  <div class="techdoc-dashboard" style="margin: 2rem 0;">
+    
+    <!-- Stats -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+      <div style="background: var(--color-navy); color: #fff; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
+        <div style="font-size: 2rem; font-weight: 700;">{{ len (where .Site.RegularPages "Type" "manual") }}</div>
+        <div style="font-size: 0.85rem; opacity: 0.8;">Manuals</div>
+      </div>
+      <div style="background: var(--color-blue); color: #fff; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
+        <div style="font-size: 2rem; font-weight: 700;">{{ len (where .Site.RegularPages "Type" "warning") }}</div>
+        <div style="font-size: 0.85rem; opacity: 0.8;">Avissos</div>
+      </div>
+      <div style="background: var(--color-green); color: #fff; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
+        <div style="font-size: 2rem; font-weight: 700;">{{ len (where .Site.RegularPages "Params.legal_review" true) }}</div>
+        <div style="font-size: 0.85rem; opacity: 0.8;">Revisió legal</div>
+      </div>
+      <div style="background: var(--color-amber); color: #fff; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
+        <div style="font-size: 2rem; font-weight: 700;">{{ len (where .Site.RegularPages "Params.draft" true) }}</div>
+        <div style="font-size: 0.85rem; opacity: 0.8;">Drafts</div>
+      </div>
+    </div>
+
+    <!-- Documents table -->
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; background: #fff; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <thead>
+          <tr style="background: var(--color-navy); color: #fff;">
+            <th style="padding: 0.75rem 1rem; text-align: left;">Títol</th>
+            <th style="padding: 0.75rem 1rem; text-align: left;">Tipus</th>
+            <th style="padding: 0.75rem 1rem; text-align: left;">Model</th>
+            <th style="padding: 0.75rem 1rem; text-align: left;">Revisió</th>
+            <th style="padding: 0.75rem 1rem; text-align: left;">Aprovat per</th>
+            <th style="padding: 0.75rem 1rem; text-align: left;">Revisió legal</th>
+            <th style="padding: 0.75rem 1rem; text-align: left;">Estat</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range (sort .Site.RegularPages ".Params.weight") }}
+          <tr style="border-bottom: 1px solid #E2E8F0;">
+            <td style="padding: 0.75rem 1rem;">
+              <a href="{{ .RelPermalink }}" style="color: var(--color-navy); text-decoration: none;">{{ .Title }}</a>
+            </td>
+            <td style="padding: 0.75rem 1rem; font-size: 0.85rem;">{{ .Type }}</td>
+            <td style="padding: 0.75rem 1rem; font-size: 0.85rem;">
+              {{ if .Params.applies_to }}
+                {{ range .Params.applies_to }}<span style="background: #E2E8F0; padding: 0.2rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; margin-right: 0.25rem;">{{ . }}</span>{{ end }}
+              {{ else }}
+                <span style="color: #94A3B8;">—</span>
+              {{ end }}
+            </td>
+            <td style="padding: 0.75rem 1rem; font-size: 0.85rem;">{{ .Params.revision | default "—" }}</td>
+            <td style="padding: 0.75rem 1rem; font-size: 0.85rem;">{{ .Params.approved_by | default "—" }}</td>
+            <td style="padding: 0.75rem 1rem;">
+              {{ if .Params.legal_review }}
+                <span style="color: var(--color-green);">✓</span>
+              {{ else }}
+                <span style="color: var(--color-amber);">○</span>
+              {{ end }}
+            </td>
+            <td style="padding: 0.75rem 1rem;">
+              {{ if .Params.draft }}
+                <span style="background: #FEF3C7; color: #92400E; padding: 0.2rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem;">Draft</span>
+              {{ else }}
+                <span style="background: #D1FAE5; color: #065F46; padding: 0.2rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem;">Publicat</span>
+              {{ end }}
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</article>
+{{ end }}
