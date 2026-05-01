@@ -4,7 +4,7 @@ date: 2026-04-30
 type: manual
 applies_to: ["X100"]
 revision: "1.0"
-approved_by: "Joan Linux"
+approved_by: "TechDocs"
 approved_date: "2026-04-30"
 legal_review: false
 weight: 3

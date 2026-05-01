@@ -19,7 +19,7 @@ disableKinds = ['taxonomy']
 
 [params]
   description = 'Sistema de gestió de documentació tècnica estructurada per a pymes industrials'
-  author = 'LinuxBCN / estategiadelcontenido.com'
+  author = 'TechDocs'
   logo = '/images/logo.svg'
   [params.brand]
     name = 'TechDocs'

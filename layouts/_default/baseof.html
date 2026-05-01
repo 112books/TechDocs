@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="TechDocs by LinuxBCN">
+  <meta name="generator" content="TechDocs">
   <title>{{ if .IsHome }}{{ .Site.Title }} — {{ i18n "site_tagline" }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
@@ -46,7 +46,7 @@
         <button type="submit" id="td-gate-btn">Accedir</button>
       </form>
       <div id="td-gate-foot">
-        <p>LinuxBCN / estategiadelcontenido.com</p>
+        <p>TechDocs</p>
       </div>
     </div>
   </div>
@@ -73,14 +73,21 @@
         <div class="techdoc-header__actions">
           {{ if hugo.IsMultilingual }}
           <select class="techdoc-lang-selector" onchange="location = this.value;">
-            {{ range .Site.Languages }}
-            <option value="{{ .Lang | relLangURL }}" {{ if eq .Lang $.Site.Language.Lang }}selected{{ end }}>
-              {{ .LanguageName }}
+            {{ range .Site.Home.AllTranslations }}
+            <option value="{{ .RelPermalink }}" {{ if eq .Language.Lang $.Site.Language.Lang }}selected{{ end }}>
+              {{ .Language.LanguageName }}
             </option>
             {{ end }}
           </select>
           {{ end }}
+          <div class="techdoc-search-toggle" style="display:inline-block; margin-left:1rem;">
+            <button onclick="toggleSearch()" style="background:none;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:0.4rem 0.8rem;border-radius:0.375rem;cursor:pointer;">{{ i18n "search" }}</button>
+          </div>
         </div>
+      </div>
+      <div id="search-container" style="display:none;padding:1rem 0;border-top:1px solid rgba(255,255,255,0.1);">
+        {{ partial "search.html" . }}
+      </div>
       </div>
     </header>
 
@@ -91,9 +98,9 @@
     <footer class="techdoc-footer">
       <div class="techdoc-footer__inner">
         {{ if .IsHome }}
-        <p>TechDocs by <a href="https://linuxbcn.com" style="color:var(--color-blue)">LinuxBCN</a> / <a href="https://estategiadelcontenido.com" style="color:var(--color-blue)">estategiadelcontenido.com</a> — v{{ .Site.Params.deploy.version }}</p>
+        <p>TechDocs v{{ .Site.Params.deploy.version }}</p>
         {{ else }}
-        <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} &mdash; {{ i18n "powered_by" }} TechDocs LinuxBCN v{{ .Site.Params.deploy.version }}</p>
+        <p>{{ i18n "generated_on" }} {{ now | time.Format "2006-01-02" }} &mdash; {{ i18n "powered_by" }} TechDocs v{{ .Site.Params.deploy.version }}</p>
         {{ end }}
       </div>
     </footer>
@@ -101,7 +108,7 @@
 
   <script>
   (function(){
-    var PW='LinuxBCN2026';
+    var PW='TechDocs2026';
     var SK='_td_a';
     var gate=document.getElementById('td-gate');
     var site=document.getElementById('td-site');
@@ -129,6 +136,12 @@
     }
   })();
   </script>
-  <script src="{{ "js/main.js" | relURL }}" defer></script>
+   <script>
+     function toggleSearch() {
+       var container = document.getElementById('search-container');
+       container.style.display = container.style.display === 'none' ? 'block' : 'none';
+     }
+   </script>
+   <script src="{{ "js/main.js" | relURL }}" defer></script>
 </body>
 </html>

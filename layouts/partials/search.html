@@ -1,0 +1,12 @@
+{{- if not hugo.IsServer -}}
+<link rel="stylesheet" href="{{ "pagefind/pagefind-ui.css" | relURL }}" />
+<script src="{{ "pagefind/pagefind-ui.js" | relURL }}" defer></script>
+<div id="search" style="margin: 1rem 0;"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    if (window.PagefindUI) {
+      new PagefindUI({ element: "#search", showSubResults: true });
+    }
+  });
+</script>
+{{- end -}}

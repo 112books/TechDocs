@@ -1,5 +1,4 @@
 /* TechDocs — Technical Documentation Theme */
-/* Base: LinuxBCN / estategiadelcontenido.com */
 
 :root {
   --color-navy: #1B2A4A;
@@ -202,7 +201,7 @@ body {
   .techdoc-article__footer { flex-direction: column; }
 }
 
-/* ===================== LANDING PAGE — LinuxBCN style ===================== */
+/* ===================== LANDING PAGE ===================== */
 
 /* Hero */
 .lp-hero { padding: 8rem 1.5rem 4rem; background: transparent; }

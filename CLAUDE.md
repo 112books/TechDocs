@@ -6,11 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **TechDocs** is a technical documentation management system for industrial SMEs requiring legally validated documentation (CE marking, ISO compliance, Machinery Directive). Built with Hugo + Markdown + Git, it generates both web portals and signed PDFs from the same content source.
 
-**Key stakeholders:** Joan Linux (LinuxBCN.com), Carlos Campo (estategiadelcontenido.com)
+**Key stakeholders:** TechDocs team
 
 **Repository:** https://github.com/112books/TechDocs  
 **Live demo:** https://112books.github.io/TechDocs/  
-**Password:** LinuxBCN2026
+**Password:** TechDocs2026
 
 ---
 
@@ -187,7 +187,7 @@ Examples: `01-seguretat.ca.md`, `02-installacio.ca.md`, `03-operacio.ca.md`
 
 The site is protected by a client-side password gate (inline in `baseof.html`):
 
-- **Password:** `LinuxBCN2026`
+- **Password:** `TechDocs2026`
 - **Mechanism:** Session-based (`sessionStorage`) — persists per browser session
 - **Implementation:** All CSS/JS inline in `baseof.html` — zero external file dependencies
 - **Limitation:** Not cryptographically secure. For production with sensitive content, use server-side auth (Cloudflare Pages Access, Netlify basic auth, or custom proxy).

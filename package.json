@@ -1,0 +1,24 @@
+{
+  "name": "techdocs",
+  "version": "1.0.0",
+  "description": "> **Documentació tècnica validada legalment, lliure de llicències, mantenible pel vostre equip.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "hugo --minify && npx pagefind --site public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/112books/TechDocs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/112books/TechDocs/issues"
+  },
+  "homepage": "https://github.com/112books/TechDocs#readme",
+  "dependencies": {
+    "pagefind": "^1.5.2"
+  }
+}

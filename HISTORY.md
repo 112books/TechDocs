@@ -8,8 +8,8 @@ Registre cronològic de tot el que s'ha fet al projecte, pas a pas, amb data i h
 
 ### 18:23 — Creació del repositori
 - Repositori creat a GitHub: `https://github.com/112books/TechDocs.git`
-- Propietari: 112books (Joan Linux)
-- Projecte: TechDocs by LinuxBCN / estategiadelcontenido.com
+- Propietari: 112books
+- Projecte: TechDocs
 
 ### 18:25 — Estructura inicial del projecte
 - Hugo site configurat amb `hugo.toml` (multiidioma: ca, es, en)
@@ -55,12 +55,12 @@ Registre cronològic de tot el que s'ha fet al projecte, pas a pas, amb data i h
 
 ### 19:00 — Password gate per a demo
 - Gate inline a `baseof.html` (zero dependències externes)
-- Contrasenya: `LinuxBCN2026`
+- Contrasenya: `TechDocs2026`
 - Autenticació basada en sessionStorage
 - Disseny amb backdrop-blur i gradient navy
 
 ### 19:05 — Fix de baseURL
-- **Problema detectat**: baseURL era `https://techdocs.linuxbcn.com/` però es servia a `/TechDocs/`
+- **Problema detectat**: baseURL era `https://techdocs.example.com/` però es servia a `/TechDocs/`
 - Solució: canviat a `https://112books.github.io/TechDocs/`
 - Els assets CSS/JS ara carreguen correctament
 
@@ -160,7 +160,7 @@ Registre cronològic de tot el que s'ha fet al projecte, pas a pas, amb data i h
 
 ### 7. Brief de presentació per a clients
 - [ ] Document Markdown → PDF amb: problema, solució, paquets de preus, ROI vs competència
-- [ ] Disseny professional amb logo TechDocs/LinuxBCN
+- [ ] Disseny professional amb logo TechDocs
 - [ ] Preparat per enviar directament a clients potencials
 - **Fitxer**: `content/brief/presentacio-comercial.es.md`
 

@@ -108,12 +108,10 @@ hugo server --language en
 
 ## Licència
 
-Aquest projecte és propietat de **LinuxBCN / estategiadelcontenido.com**.
-
-- El codi del tema i la configuració es distribueixen sota llicència MIT.
+El codi del tema i la configuració es distribueixen sota llicència MIT.
 - Cada client és propietari del seu contingut i configuració específica.
 - No hi ha llicències anuals: el client controla el seu sistema.
 
 ---
 
-**Projecte TechDocs** by [LinuxBCN](https://linuxbcn.com) / [estategiadelcontenido.com](https://estategiadelcontenido.com)
+**Projecte TechDocs**

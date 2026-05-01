@@ -1,0 +1,132 @@
+<style>
+.techdoc-contact {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 100%);
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.techdoc-contact h2 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.techdoc-contact .sub {
+  color: #93C5FD;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+.techdoc-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.techdoc-contact-form label {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.techdoc-contact-form input,
+.techdoc-contact-form select,
+.techdoc-contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.techdoc-contact-form input:focus,
+.techdoc-contact-form select:focus,
+.techdoc-contact-form textarea:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
+}
+.techdoc-contact-form select option {
+  background: #1B2A4A;
+  color: #fff;
+}
+.techdoc-contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.techdoc-contact-form button {
+  width: 100%;
+  padding: 0.85rem;
+  background: #2563EB;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.techdoc-contact-form button:hover {
+  background: #1D4ED8;
+}
+.techdoc-contact-form .success {
+  display: none;
+  padding: 1rem;
+  background: rgba(22,163,74,0.2);
+  border: 1px solid #16A34A;
+  border-radius: 0.5rem;
+  color: #86EFAC;
+  text-align: center;
+}
+</style>
+
+<div class="techdoc-contact" id="contacte-form">
+  <h2>Contacte</h2>
+  <p class="sub">Tria qui vol contactar amb la seva consulta</p>
+  
+  <form class="techdoc-contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="hidden" name="_language" value="{{ .Site.Language.Lang }}">
+    
+    <label for="recipient">Destinatari *</label>
+    <select name="recipient" id="recipient" required onchange="updateRecipient()">
+      <option value="">Selecciona un destinatari...</option>
+      <option value="techdocs">TechDocs — Informació general</option>
+      <option value="support">Suport tècnic</option>
+      <option value="sales">Vendes i pressupostos</option>
+      <option value="legal">Validació legal (CE/ISO)</option>
+    </select>
+    
+    <label for="name">Nom *</label>
+    <input type="text" name="name" id="name" placeholder="El teu nom complet" required>
+    
+    <label for="email">Correu electrònic *</label>
+    <input type="email" name="email" id="email" placeholder="el-teu-email@exemple.com" required>
+    
+    <label for="company">Empresa</label>
+    <input type="text" name="company" id="company" placeholder="Nom de l'empresa">
+    
+    <label for="message">Missatge *</label>
+    <textarea name="message" id="message" placeholder="Descriu la teva consulta..." required></textarea>
+    
+    <button type="submit">Enviar consulta →</button>
+  </form>
+  
+  <div class="success" id="success-msg">
+    ✓ La teva consulta s'ha enviat correctament. Respondrem aviat.
+  </div>
+</div>
+
+<script>
+function updateRecipient() {
+  var recipient = document.getElementById('recipient').value;
+  var emailMap = {
+    'techdocs': 'info@techdocs.ai',
+    'support': 'support@techdocs.ai',
+    'sales': 'sales@techdocs.ai',
+    'legal': 'legal@techdocs.ai'
+  };
+  // This would need server-side handling or Formspree routing
+}
+</script>

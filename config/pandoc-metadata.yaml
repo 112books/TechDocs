@@ -1,6 +1,6 @@
 # Pandoc metadata for TechDocs PDF generation
 title: "TechDocs — Technical Document"
-author: "LinuxBCN"
+author: "TechDocs"
 date: "2026-04-30"
 lang: ca
 documentclass: article
@@ -15,7 +15,7 @@ header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyhf{}
-  \fancyhead[L]{\small TechDocs — LinuxBCN}
+  \fancyhead[L]{\small TechDocs}
   \fancyhead[R]{\small \thepage}
   \fancyfoot[C]{\small Document confidencial — Ús intern}
   \renewcommand{\headrulewidth}{0.4pt}

@@ -2,7 +2,7 @@
 <!-- HERO -->
 <section class="lp-hero">
   <div class="lp-container">
-    <p class="lp-hero__overline">LinuxBCN · estategiadelcontenido</p>
+    <p class="lp-hero__overline">Documentació tècnica industrial</p>
     <h1>Documentació tècnica<br><span class="lp-hero__accent">amb criteri.</span></h1>
     <p class="lp-hero__lead">Sistemes de documentació industrial lliures de llicències. Compliment CE, ISO, directiva de maquinària. El teu equip en té el control — per sempre.</p>
     <div class="lp-hero__links">
@@ -100,7 +100,7 @@
         </div>
       </div>
       <a href="https://112books.github.io/TechDocs/" class="lp-btn" target="_blank">Provar la demo →</a>
-      <p class="lp-demo-note">Contrasenya: LinuxBCN2026</p>
+      <p class="lp-demo-note">Contrasenya: TechDocs2026</p>
     </div>
   </div>
 </section>
@@ -173,11 +173,14 @@
   <div class="lp-container">
     <h2>Parlem del teu cas.</h2>
     <p>Sense compromís. Cada situació és diferent.</p>
-    <a href="mailto:joan@linuxbcn.com" class="lp-btn">Contactar →</a>
-    <div class="lp-cta-footer">
-      <span>Joan Linux — <a href="https://linuxbcn.com">linuxbcn.com</a></span>
-      <span>Carlos Campo — <a href="https://estategiadelcontenido.com">estategiadelcontenido.com</a></span>
-    </div>
+    <a href="#contacte-form" class="lp-btn">Contactar →</a>
+   </div>
+ </section>
+
+<!-- CONTACT FORM -->
+<section class="lp-section" id="contacte-form">
+  <div class="lp-container">
+    {{ partial "contact-form.html" . }}
   </div>
 </section>
 {{ end }}
