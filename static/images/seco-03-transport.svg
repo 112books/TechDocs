@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Box -->
+  <rect x="125" y="100" width="150" height="120" rx="5" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="200" y="165" font-family="Arial" font-size="14" fill="#1B2A4A" text-anchor="middle">CAIXA</text>
+  <text x="200" y="185" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">SECO SV 1003 D</text>
+  
+  <!-- Vertical arrow -->
+  <text x="200" y="250" font-size="24" text-anchor="middle">▭</text>
+  <text x="200" y="280" font-family="Arial" font-size="12" fill="#16A34A" text-anchor="middle">POSICIÓ VERTICAL</text>
+  
+  <!-- Warning labels -->
+  <rect x="135" y="110" width="30" height="15" rx="2" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+  <text x="150" y="121" font-family="Arial" font-size="8" fill="#D97706" text-anchor="middle">FRÀGIL</text>
+  
+  <rect x="235" y="110" width="30" height="15" rx="2" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+  <text x="250" y="121" font-family="Arial" font-size="8" fill="#DC2626" text-anchor="middle">NO TUMBAR</text>
+</svg>

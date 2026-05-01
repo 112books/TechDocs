@@ -42,4 +42,8 @@ Conserveu sempre l'embalatge original per a futurs transports. Un embalatge inad
 2. Si hi ha danys visibles, documenteu-los amb fotografies abans de signar l'albarà
 3. Comproveu que tots els components llistats a la llista de lliurament estan presents
 
+## Esquema de transport
+
+{{< figure src="/images/seco-03-transport.svg" caption="Posició vertical de la caixa durant el transport" >}}
+
 {{< legal-approval >}}

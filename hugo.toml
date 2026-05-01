@@ -20,7 +20,7 @@ disableKinds = ['taxonomy']
 [params]
   description = 'Sistema de gestió de documentació tècnica estructurada per a pymes industrials'
   author = 'TechDocs'
-  logo = '/images/logo.svg'
+  logo = '/images/favicon.svg'
   [params.brand]
     name = 'TechDocs'
     tagline = 'Documentació tècnica validada legalment'

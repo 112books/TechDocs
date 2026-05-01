@@ -65,6 +65,10 @@ Requisits d'instal·lació:
 
 Si cal modificar la rotació del motor:
 
-- **Intercanvieu dos cables de fase** del motor qualssevol
+- **Intercanvieu dos cables de fase** del motor qualsvol
+
+## Esquema elèctric trifàsic
+
+{{< figure src="/images/seco-06-schematic-3phase.svg" caption="Connexió elèctrica trifàsica (L1-L2-L3-N-PE)" >}}
 
 {{< legal-approval >}}
