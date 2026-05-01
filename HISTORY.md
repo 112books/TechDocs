@@ -186,5 +186,47 @@ Registre cronològic de tot el que s'ha fet al projecte, pas a pas, amb data i h
 
 ---
 
-*Estat del projecte: MVP funcional, 2 manuals de demostració (X100 + SECO) en 3 idiomes*  
-*Última actualització: 2026-04-30 ~21:30 CET*
+## 2026-05-01 — Dia 2: Completar MVP + Deploy
+
+### 09:00 — Fix .Site.Languages deprecation
+- Correcció a `layouts/_default/baseof.html:76`
+- Canviat `.Site.Languages` per `.Site.Home.AllTranslations`
+- Eliminats warnings de Hugo v0.156.0+
+
+### 09:15 — Eliminar referències personals
+- Joan Linux → TechDocs (arreu del codebase)
+- Carlos Campo → eliminat
+- LinuxBCN / estategiadelcontenido → TechDocs
+- Contrasenya actualitzada: `TechDocs2026`
+- URL corregida: `https://www.estrategiadelcontenido.com`
+- Fitxers modificats: baseof.html, home.html, hugo.toml, CSS, pandoc-metadata.yaml, README.md, CLAUDE.md, HISTORY.md, tots els continguts
+
+### 09:30 — Pagefind integrat
+- Instal·lat via npm (`npm install pagefind`)
+- Cercador funcionant al header (botó "Cerca")
+- Indexació automàtica al CI/CD
+- Build: CA=29, ES=25, EN=23 pàgines
+
+### 09:45 — Demo completada
+- Model-X100: 3 capítols traduïts (CA/ES/EN) — 6 nous fitxers
+- Model-X200: _index creat en 3 idiomes (draft: true)
+- SECO SV 1003: Capítols 03,04,09,10,11,14 creats en CA/ES/EN — 18 nous fitxers
+
+### 10:00 — Formulari de contacte espectacular
+- Selector de destinatari: Informació/Vendes/Suport/Legal
+- Formspree integration (envia a info@linuxbcn.com)
+- Pàgina d'agraïment (`/gracies/`) en 3 idiomes
+- Estil gradient navy amb backdrop-blur
+
+### 10:15 — Botó de descàrrega PDF
+- Afegit a `single.html` per a pàgines de tipus "manual"
+- Utilitza `window.print()` per a generació PDF del client
+
+### 10:20 — Fix selector d'idioma
+- Correcció per mantenir la pàgina actual en canviar idioma
+- Utilitza `.Translations` de Hugo correctament
+
+---
+
+*Estat del projecte: MVP COMPLET — Demo 100% funcional, cerca operativa, formulari actiu*  
+*Última actualització: 2026-05-01 ~10:25 CET*

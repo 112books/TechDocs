@@ -73,10 +73,17 @@
         <div class="techdoc-header__actions">
           {{ if hugo.IsMultilingual }}
           <select class="techdoc-lang-selector" onchange="location = this.value;">
+            {{ range .Translations }}
+            <option value="{{ .RelPermalink }}" {{ if eq .Language.Lang $.Site.Language.Lang }}selected{{ end }}>
+              {{ .Language.LanguageName }}
+            </option>
+            {{ end }}
+            {{ if not .Translations }}
             {{ range .Site.Home.AllTranslations }}
             <option value="{{ .RelPermalink }}" {{ if eq .Language.Lang $.Site.Language.Lang }}selected{{ end }}>
               {{ .Language.LanguageName }}
             </option>
+            {{ end }}
             {{ end }}
           </select>
           {{ end }}
