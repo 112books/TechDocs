@@ -2,21 +2,25 @@
 .techdoc-contact {
   max-width: 600px;
   margin: 2rem auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 100%);
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 50%, #1B2A4A 100%);
   border-radius: 1rem;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .techdoc-contact h2 {
   color: #fff;
   font-size: 1.75rem;
+  font-weight: 700;
   margin: 0 0 0.5rem;
   text-align: center;
+  letter-spacing: -0.025em;
 }
 .techdoc-contact .sub {
   color: #93C5FD;
   text-align: center;
   margin: 0 0 2rem;
+  font-size: 0.95rem;
 }
 .techdoc-contact-form {
   display: flex;
@@ -25,8 +29,10 @@
 }
 .techdoc-contact-form label {
   color: rgba(255,255,255,0.9);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .techdoc-contact-form input,
 .techdoc-contact-form select,
@@ -42,6 +48,10 @@
   transition: border 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
 }
+.techdoc-contact-form input::placeholder,
+.techdoc-contact-form textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+}
 .techdoc-contact-form input:focus,
 .techdoc-contact-form select:focus,
 .techdoc-contact-form textarea:focus {
@@ -55,6 +65,7 @@
 .techdoc-contact-form textarea {
   min-height: 120px;
   resize: vertical;
+  font-family: inherit;
 }
 .techdoc-contact-form button {
   width: 100%;
@@ -66,39 +77,53 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.1s;
 }
 .techdoc-contact-form button:hover {
   background: #1D4ED8;
 }
-.techdoc-contact-form .success {
+.techdoc-contact-form button:active {
+  transform: scale(0.98);
+}
+.techdoc-contact .success {
   display: none;
-  padding: 1rem;
-  background: rgba(22,163,74,0.2);
+  padding: 1.5rem;
+  background: rgba(22,163,74,0.15);
   border: 1px solid #16A34A;
   border-radius: 0.5rem;
   color: #86EFAC;
   text-align: center;
+  margin-top: 1rem;
+}
+.techdoc-contact .success h3 {
+  color: #86EFAC;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+.techdoc-contact .success p {
+  margin: 0;
+  color: rgba(134,239,172,0.8);
 }
 </style>
 
 <div class="techdoc-contact" id="contacte-form">
   <h2>Contacte</h2>
-  <p class="sub">Tria qui vol contactar amb la seva consulta</p>
+  <p class="sub">Tria qui vol contactar amb la seva consulta</p>  
   
-  <form class="techdoc-contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <input type="hidden" name="_language" value="{{ .Site.Language.Lang }}">
+  <form class="techdoc-contact-form" action="https://formspree.io/f/myzwjynk" method="POST">
+    <input type="hidden" name="_language" value="ca">
+    <input type="hidden" name="_subject" value="Nova consulta des de TechDocs">
     
     <label for="recipient">Destinatari *</label>
-    <select name="recipient" id="recipient" required onchange="updateRecipient()">
+    <select name="recipient" id="recipient" required onchange="updateSubject(this.value)">
       <option value="">Selecciona un destinatari...</option>
-      <option value="techdocs">TechDocs — Informació general</option>
-      <option value="support">Suport tècnic</option>
+      <option value="general">Informació general</option>
       <option value="sales">Vendes i pressupostos</option>
+      <option value="support">Suport tècnic</option>
       <option value="legal">Validació legal (CE/ISO)</option>
     </select>
     
-    <label for="name">Nom *</label>
+    <label for="name">Nom complet *</label>
     <input type="text" name="name" id="name" placeholder="El teu nom complet" required>
     
     <label for="email">Correu electrònic *</label>
@@ -108,25 +133,58 @@
     <input type="text" name="company" id="company" placeholder="Nom de l'empresa">
     
     <label for="message">Missatge *</label>
-    <textarea name="message" id="message" placeholder="Descriu la teva consulta..." required></textarea>
+    <textarea name="message" id="message" placeholder="Descriu la teva consulta, quin tipus de màquina necessites documentar, idiomes necessaris, etc." required></textarea>
     
     <button type="submit">Enviar consulta →</button>
-  </form>
+  </form>  
   
   <div class="success" id="success-msg">
-    ✓ La teva consulta s'ha enviat correctament. Respondrem aviat.
+    <h3>✓ Gràcies pel teu missatge!</h3>
+    <p>Ens posarem en contacte amb tu aviat.<br>T'estem redirigint...</p>
   </div>
 </div>
 
 <script>
-function updateRecipient() {
-  var recipient = document.getElementById('recipient').value;
-  var emailMap = {
-    'techdocs': 'info@techdocs.ai',
-    'support': 'support@techdocs.ai',
-    'sales': 'sales@techdocs.ai',
-    'legal': 'legal@techdocs.ai'
+function updateSubject(value) {
+  var subjects = {
+    'general': 'Nova consulta - Informació general',
+    'sales': 'Nova consulta - Vendes i pressupostos',
+    'support': 'Nova consulta - Suport tècnic',
+    'legal': 'Nova consulta - Validació legal'
   };
-  // This would need server-side handling or Formspree routing
+  var subjectField = document.querySelector('input[name="_subject"]');
+  if (subjects[value]) {
+    subjectField.value = subjects[value];
+  }
 }
+
+// Handle form submission
+var form = document.querySelector('.techdoc-contact-form form');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  var formData = new FormData(form);
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(function(response) {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+      setTimeout(function() {
+        window.location.href = '/gracies';
+      }, 3000);
+    } else {
+      response.json().then(function(data) {
+        alert('Error: ' + (data.error || 'No s\'ha pogut enviar el missatge'));
+      });
+    }
+  }).catch(function(error) {
+    alert('Error de connexió. Torna-ho a provar.');
+  });
+});
 </script>
