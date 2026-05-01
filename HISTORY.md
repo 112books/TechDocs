@@ -226,7 +226,28 @@ Registre cronològic de tot el que s'ha fet al projecte, pas a pas, amb data i h
 - Correcció per mantenir la pàgina actual en canviar idioma
 - Utilitza `.Translations` de Hugo correctament
 
+### 11:00 — Model-X100 complet en català
+- Afegits capítols 04 (Manteniment), 05 (Posada en marxa), 06 (Resolució de problemes)
+- Model-X100 ara té 6 capítols complets en català
+
+### 11:15 — Favicon i millores visuals
+- Creat favicon SVG amb logo "TD" sobre fons navy
+- Afegit suport per a mode fosc (dark mode) amb toggle 🌙/☀️
+- Transicions suaus en imatges i SVGs
+- Millores d'impressió CSS (@media print)
+
+### 11:30 — Diagrames SVG per SECO
+- Creat `seco-03-transport.svg` — Transport vertical
+- Creat `seco-06-schematic-3phase.svg` — Esquema elèctric trifàsic
+- Afegits als capítols 03 i 06 del SECO
+
+### 11:45 — Dashboard documental
+- Pàgina `/dashboard/` amb estadístiques en temps real
+- Taula de documents: títol, tipus, model, revisió, estat legal, estat publicació
+- Enllaç al header (totes les pàgines excepte home)
+- 33 pàgines CA, 26 ES, 24 EN
+
 ---
 
-*Estat del projecte: MVP COMPLET — Demo 100% funcional, cerca operativa, formulari actiu*  
-*Última actualització: 2026-05-01 ~10:25 CET*
+*Estat del projecte: MVP COMPLET — Demo 100% funcional, cerca operativa, formulari actiu, dashboard operatiu*  
+*Última actualització: 2026-05-01 ~12:00 CET*
