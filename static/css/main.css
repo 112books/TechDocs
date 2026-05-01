@@ -282,3 +282,27 @@ body {
   .lp-demo-meta { grid-template-columns: 1fr; }
   .lp-pricing-item--featured { padding: 1.5rem; }
 }
+
+/* Dark mode toggle */
+.theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.4rem 0.8rem; border-radius: 0.375rem; cursor: pointer; font-size: 0.85rem; margin-left: 0.5rem; }
+.theme-toggle:hover { background: rgba(255,255,255,0.1); }
+
+/* Smooth transitions */
+.techdoc-article__content img, .techdoc-article__content svg { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.techdoc-article__content img:hover, .techdoc-article__content svg:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+/* Dark mode styles */
+body.dark-mode { background: #0F172A; }
+body.dark-mode .techdoc-header { background: #1E293B; border-bottom-color: #334155; }
+body.dark-mode .techdoc-article { background: #1E293B; color: #E2E8F0; }
+body.dark-mode .techdoc-article__header h1 { color: #F1F5F9; }
+body.dark-mode .techdoc-footer { background: #1E293B; border-top-color: #334155; }
+body.dark-mode .techdoc-toc { background: #1E293B; border-color: #334155; }
+body.dark-mode a { color: #60A5FA; }
+
+/* Print improvements */
+@media print {
+  .techdoc-header, .techdoc-footer, .techdoc-toc, .techdoc-article__actions { display: none !important; }
+  .techdoc-article { max-width: 100%; margin: 0; padding: 0; }
+  .techdoc-article__content { font-size: 12pt; line-height: 1.5; }
+}
