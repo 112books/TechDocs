@@ -15,6 +15,14 @@
     {{ end }}
   </header>
 
+  {{ if eq .Type "manual" }}
+  <div class="techdoc-article__actions" style="margin:1rem 0; display:flex; gap:0.5rem; flex-wrap:wrap;">
+    <a href="{{ .RelPermalink }}?format=pdf" onclick="window.print(); return false;" class="techdoc-btn techdoc-btn--pdf" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:#DC2626; color:#fff; border-radius:0.375rem; text-decoration:none; font-size:0.9rem; font-weight:600; cursor:pointer;">
+      📄 {{ i18n "download_pdf" }}
+    </a>
+  </div>
+  {{ end }}
+  
   {{ with .Params.applies_to }}
   {{ partial "model-selector" . }}
   {{ end }}
