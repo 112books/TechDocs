@@ -247,7 +247,31 @@ Registre cronològic de tot el que s'ha fet al projecte, pas a pas, amb data i h
 - Enllaç al header (totes les pàgines excepte home)
 - 33 pàgines CA, 26 ES, 24 EN
 
+### 12:00 — Millora script PDF
+- Simplificat i més robust (`generate-pdf.sh`)
+- Suport multi-engine (WeasyPrint, wkhtmltopdf, fallback HTML)
+- Extracció metadades corregida (títol, revisió, aprovació)
+- PDF d'exemple generat: `manual-seco-final.pdf`
+
+### 12:15 — Més SVGs per SECO
+- `seco-02-overview.svg` — Vista general (IN/OUT/VA/FW)
+- `seco-05-installation-space.svg` — Espai mínim instal·lació
+- `seco-06-schematic-1phase.svg` — Esquema monofàsic
+- `seco-08-vane-replacement.svg` — Procés canvi paletes
+- Afegits als capítols 02, 05, 06, 08 del SECO
+
+### 12:30 — Brief comercial per clients
+- Creat `content/brief/` amb presentació en CA/ES/EN
+- Comparativa ROI: 45-150k€ (ST4) vs 7-9k€ (TechDocs)
+- Taula paquets: Starter/Professional/Legal
+- Cas real SECO inclós
+
+### 12:45 — Pagefind verificat
+- 79 pàgines indexades correctament en 3 idiomes
+- Cercador funcionant al header
+- Indexació automàtica al CI/CD
+
 ---
 
-*Estat del projecte: MVP COMPLET — Demo 100% funcional, cerca operativa, formulari actiu, dashboard operatiu*  
-*Última actualització: 2026-05-01 ~12:00 CET*
+*Estat del projecte: MVP COMPLET — Demo 100% funcional, cerca operativa, formulari actiu, dashboard operatiu, brief comercial llest*  
+*Última actualització: 2026-05-02 ~12:50 CET*
