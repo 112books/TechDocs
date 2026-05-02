@@ -74,4 +74,8 @@ Retireu totes les tapes protectores abans de la instal·lació.
 |---|---|
 | Mida de connexió | G3/8 |
 
+## Espai d'instal·lació
+
+{{< figure src="/images/seco-05-installation-space.svg" caption="Espai mínim d'instal·lació (~2 cm lateral i superior)" >}}
+
 {{< legal-approval >}}

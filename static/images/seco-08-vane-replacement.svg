@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <rect width="600" height="500" fill="#F8FAFC"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#1B2A4A" text-anchor="middle">Procediment de Canvi de Paletes</text>
+  
+  <!-- Step 1: Remove cover -->
+  <rect x="50" y="60" width="200" height="120" rx="5" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="150" y="90" font-family="Arial" font-size="12" font-weight="bold" fill="#1B2A4A" text-anchor="middle">1. Desmuntar</text>
+  <circle cx="150" cy="140" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+  <text x="150" y="145" font-family="Arial" font-size="20" fill="#D97706" text-anchor="middle">🔧</text>
+  <text x="150" y="175" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">Treure tapes</text>
+  
+  <!-- Step 2: Remove old vanes -->
+  <rect x="300" y="60" width="200" height="120" rx="5" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="400" y="90" font-family="Arial" font-size="12" font-weight="bold" fill="#1B2A4A" text-anchor="middle">2. Extreure</text>
+  <circle cx="400" cy="140" r="25" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+  <text x="390" y="135" font-family="Arial" font-size="10" fill="#DC2626">Old</text>
+  <text x="410" y="150" font-family="Arial" font-size="10" fill="#DC2626">vanes</text>
+  <text x="400" y="175" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">4 paletes</text>
+  
+  <!-- Arrow down -->
+  <line x1="400" y1="180" x2="400" y2="220" stroke="#1B2A4A" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Clean -->
+  <rect x="300" y="230" width="200" height="120" rx="5" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="400" y="260" font-family="Arial" font-size="12" font-weight="bold" fill="#1B2A4A" text-anchor="middle">3. Netejar</text>
+  <circle cx="400" cy="310" r="25" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+  <text x="400" y="315" font-family="Arial" font-size="20" fill="#2563EB" text-anchor="middle">🧽</text>
+  <text x="400" y="345" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">Interior net</text>
+  
+  <!-- Arrow left -->
+  <line x1="300" y1="290" x2="250" y2="290" stroke="#1B2A4A" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Install new vanes -->
+  <rect x="50" y="230" width="200" height="120" rx="5" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="150" y="260" font-family="Arial" font-size="12" font-weight="bold" fill="#1B2A4A" text-anchor="middle">4. Instal·lar</text>
+  <circle cx="150" cy="310" r="25" fill="#D1FAE5" stroke="#16A34A" stroke-width="2"/>
+  <text x="140" y="305" font-family="Arial" font-size="10" fill="#16A34A">New</text>
+  <text x="160" y="320" font-family="Arial" font-size="10" fill="#16A34A">vanes</text>
+  <text x="150" y="345" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">Ref: 0870140846</text>
+  
+  <!-- Step 5: Reassemble -->
+  <rect x="50" y="390" width="450" height="80" rx="5" fill="#1B2A4A" opacity="0.8"/>
+  <text x="300" y="420" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">5. Remuntar i provar</text>
+  <text x="300" y="445" font-family="Arial" font-size="10" fill="#93C5FD" text-anchor="middle">Pressionar segons especificacions (120 bar)</text>
+  
+  <!-- Arrow down -->
+  <line x1="150" y1="350" x2="150" y2="390" stroke="#1B2A4A" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1B2A4A"/>
+    </marker>
+  </defs>
+</svg>

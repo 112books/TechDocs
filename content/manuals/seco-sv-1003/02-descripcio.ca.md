@@ -60,4 +60,8 @@ El filtre d'entrada protegeix la màquina de la pols i altres sòlids presents e
 
 Segons la versió, es pot acoblar una boca de mànega a la boca d'aspiració o a la d'escapament. Permet una fàcil connexió mitjançant mànega flexible.
 
+## Vista general
+
+{{< figure src="/images/seco-02-overview.svg" caption="Vista general SV 1003/1005 D — Connexions IN, OUT, VA, FW)" >}}
+
 {{< legal-approval >}}

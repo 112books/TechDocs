@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <rect width="500" height="400" fill="#F8FAFC"/>
+  
+  <!-- Title -->
+  <text x="250" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#1B2A4A" text-anchor="middle">Espai Mínim d'Instal·lació</text>
+  
+  <!-- Machine representation -->
+  <rect x="175" y="100" width="150" height="150" rx="5" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="250" y="180" font-family="Arial" font-size="12" fill="#1B2A4A" text-anchor="middle">SECO SV</text>
+  <text x="250" y="200" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">1003 D</text>
+  
+  <!-- Minimum space indicators -->
+  <!-- Left -->
+  <line x1="150" y1="100" x2="150" y2="250" stroke="#DC2626" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="140" y="180" font-family="Arial" font-size="11" fill="#DC2626" text-anchor="end">~2 cm</text>
+  
+  <!-- Right -->
+  <line x1="350" y1="100" x2="350" y2="250" stroke="#DC2626" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="360" y="180" font-family="Arial" font-size="11" fill="#DC2626" text-anchor="start">~2 cm</text>
+  
+  <!-- Top -->
+  <line x1="175" y1="80" x2="325" y2="80" stroke="#DC2626" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="250" y="75" font-family="Arial" font-size="11" fill="#DC2626" text-anchor="middle">~2 cm</text>
+  
+  <!-- Bottom -->
+  <line x1="175" y1="270" x2="325" y2="270" stroke="#DC2626" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="250" y="285" font-family="Arial" font-size="11" fill="#DC2626" text-anchor="middle">~2 cm</text>
+  
+  <!-- Dimensions -->
+  <line x1="175" y1="290" x2="325" y2="290" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="175" y1="285" x2="175" y2="295" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="325" y1="285" x2="325" y2="295" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="250" y="310" font-family="Arial" font-size="11" fill="#1B2A4A" text-anchor="middle">1200 mm</text>
+  
+  <line x1="350" y1="100" x2="350" y2="250" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="345" y1="100" x2="355" y2="100" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="345" y1="250" x2="355" y2="250" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="370" y="180" font-family="Arial" font-size="11" fill="#1B2A4A">800 mm</text>
+  
+  <!-- Note -->
+  <rect x="50" y="340" width="400" height="40" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+  <text x="250" y="360" font-family="Arial" font-size="11" fill="#1B2A4A" text-anchor="middle">Mantenir espai lliure per a ventilació i manteniment</text>
+  <text x="250" y="378" font-family="Arial" font-size="10" fill="#64748B" text-anchor="middle">No obturar reixes de ventilació</text>
+</svg>

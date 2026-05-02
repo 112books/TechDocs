@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="600" height="400" fill="#F8FAFC"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#1B2A4A" text-anchor="middle">Vista General — SECO SV 1003/1005 D</text>
+  
+  <!-- Main body -->
+  <rect x="200" y="80" width="200" height="200" rx="10" fill="#E2E8F0" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="300" y="190" font-family="Arial" font-size="14" fill="#1B2A4A" text-anchor="middle">SECO SV 1003 D</text>
+  <text x="300" y="210" font-family="Arial" font-size="12" fill="#64748B" text-anchor="middle">Bomba de buit industrial</text>
+  
+  <!-- IN label -->
+  <rect x="150" y="160" width="50" height="30" rx="5" fill="#2563EB" opacity="0.1" stroke="#2563EB" stroke-width="2"/>
+  <text x="175" y="180" font-family="Arial" font-size="11" fill="#2563EB" text-anchor="middle">IN</text>
+  <line x1="200" y1="175" x2="150" y2="175" stroke="#2563EB" stroke-width="2"/>
+  
+  <!-- OUT label -->
+  <rect x="400" y="160" width="50" height="30" rx="5" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="2"/>
+  <text x="425" y="180" font-family="Arial" font-size="11" fill="#16A34A" text-anchor="middle">OUT</text>
+  <line x1="400" y1="175" x2="450" y2="175" stroke="#16A34A" stroke-width="2"/>
+  
+  <!-- VA label -->
+  <rect x="280" y="300" width="40" height="30" rx="3" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="2"/>
+  <text x="300" y="320" font-family="Arial" font-size="10" fill="#D97706" text-anchor="middle">VA</text>
+  <line x1="300" y1="280" x2="300" y2="300" stroke="#D97706" stroke-width="2"/>
+  
+  <!-- FW label -->
+  <rect x="320" y="300" width="40" height="30" rx="3" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="2"/>
+  <text x="340" y="320" font-family="Arial" font-size="10" fill="#D97706" text-anchor="middle">FW</text>
+  <line x1="340" y1="280" x2="340" y2="300" stroke="#D97706" stroke-width="2"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="350" width="15" height="15" fill="#2563EB" opacity="0.1" stroke="#2563EB" stroke-width="1"/>
+  <text x="72" y="362" font-family="Arial" font-size="10" fill="#1B2A4A">IN — Entrada</text>
+  
+  <rect x="200" y="350" width="15" height="15" fill="#16A34A" opacity="0.1" stroke="#16A34A" stroke-width="1"/>
+  <text x="222" y="362" font-family="Arial" font-size="10" fill="#1B2A4A">OUT — Sortida</text>
+  
+  <rect x="350" y="350" width="15" height="15" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1"/>
+  <text x="372" y="362" font-family="Arial" font-size="10" fill="#1B2A4A">VA/FW — Vàlvules</text>
+</svg>
