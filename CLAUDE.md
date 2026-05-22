@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **TechDocs** is a technical documentation management system for industrial SMEs requiring legally validated documentation (CE marking, ISO compliance, Machinery Directive). Built with Hugo + Markdown + Git, it generates both web portals and signed PDFs from the same content source.
 
+**v2 Architecture:** Content is stored as atomic, reusable blocks in an Obsidian-compatible vault. Blocks are composed into documents, tagged for search, and exported to multiple formats (PDF, HTML, JSON).
+
 **Key stakeholders:** TechDocs team
 
 **Repository:** https://github.com/112books/TechDocs  
@@ -14,7 +16,91 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## Architecture
+## v2 Block Architecture
+
+### Philosophy
+
+Each unit of knowledge is an **atomic, independent block** that can be:
+- Uniquely identified (coded ID)
+- Translated (reference to original block)
+- Reused (composed into multiple documents)
+- Exported (PDF, HTML, JSON, XML)
+- Tagged (semantic tags for search and filtering)
+
+### Block ID Scheme
+
+```
+[TIPUS]-[CATEGORIA]-[SEQÜÈNCIA]
+```
+
+**Types:** `WARN` (warning), `PROC` (procedure), `SPEC` (specification), `INFO` (info), `LEGAL` (legal), `DEF` (definition), `REF` (reference)
+
+**Categories:** `ELEC`, `MECH`, `THERM`, `CHEM`, `SAFETY`, `INSTALL`, `MAINT`, `OPER`, `PERF`, `TROUBLE`, `GENERAL`
+
+**Examples:** `WARN-ELEC-001`, `PROC-INSTALL-001`, `SPEC-PERF-001`, `LEGAL-CE-001`
+
+### Block Frontmatter — REQUIRED Fields
+
+```yaml
+---
+block_id: "WARN-ELEC-001"
+block_type: "warning"
+block_category: "electrical"
+title: "Perill de descàrrega elèctrica"
+version: "1.0"
+status: "approved"  # draft | review | approved | deprecated
+applies_to: ["SV 1003 D", "SV 1005 D"]
+language: "ca"
+translation_of: ""  # block_id of original (empty if original)
+tags: ["electric", "high-voltage", "lockout-tagout"]
+severity: "critical"  # low | medium | high | critical
+approved_by: "Michael Dostalek"
+approved_date: "2021-04-16"
+legal_review: true
+related_blocks: ["WARN-ELEC-002", "PROC-INSTALL-001"]
+---
+```
+
+### Vault Structure
+
+```
+vault/
+├── blocks/                    # Atomic blocks by type
+│   ├── warning/
+│   ├── procedure/
+│   ├── specification/
+│   ├── legal/
+│   ├── definition/
+│   └── reference/
+├── compositions/              # Documents composed from blocks
+│   ├── manuals/
+│   │   └── seco-sv1003/
+│   └── templates/
+└── exports/                   # Generated exports
+    ├── pdf/
+    ├── html/
+    └── json/
+```
+
+### Pipeline Commands
+
+```bash
+# List all blocks
+python3 pipeline/build.py --list-blocks
+
+# List compositions
+python3 pipeline/build.py --list-compositions
+
+# Check translation coverage
+python3 pipeline/build.py --check-translations es
+
+# Export manual as JSON
+python3 pipeline/build.py --manual seco-sv1003 --lang ca --format json
+```
+
+---
+
+## Architecture (Legacy Hugo)
 
 ### Core Stack
 

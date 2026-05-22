@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDocs — Document de Projecte</title>
+<style>
+  @page { size: A4; margin: 2cm 2.5cm; }
+  @page :first { margin-top: 0; }
+  @page :left { @bottom-left { content: "TechDocs — Document de projecte"; font-size: 8pt; color: #94A3B8; } }
+  @page :right { @bottom-right { content: counter(page); font-size: 8pt; color: #94A3B8; } }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.65;
+    color: #1E293B;
+  }
+
+  /* Cover page */
+  .cover {
+    page-break-after: always;
+    background: #1B2A4A;
+    color: #fff;
+    padding: 4cm 2.5cm;
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover__overline { font-size: 9pt; letter-spacing: 0.1em; text-transform: uppercase; color: #94A3B8; margin-bottom: 1.5cm; }
+  .cover h1 { font-size: 32pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.5cm; }
+  .cover__accent { color: #60A5FA; }
+  .cover__subtitle { font-size: 14pt; color: #93C5FD; line-height: 1.5; max-width: 80%; }
+  .cover__footer { font-size: 9pt; color: #64748B; line-height: 1.8; }
+  .cover__footer strong { color: #94A3B8; }
+
+  /* Content pages */
+  .content { padding: 0; }
+
+  .section-label { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.1em; color: #94A3B8; margin-bottom: 1.5cm; font-weight: 600; }
+  h2 { font-size: 20pt; font-weight: 800; letter-spacing: -0.03em; color: #1B2A4A; margin-bottom: 1cm; line-height: 1.15; }
+  h3 { font-size: 13pt; font-weight: 700; color: #1B2A4A; margin: 1cm 0 0.4cm; }
+
+  p { margin-bottom: 0.8cm; }
+  p strong { color: #0F172A; }
+
+  .lead { font-size: 12pt; color: #475569; line-height: 1.7; margin-bottom: 1.2cm; }
+
+  .divider { height: 1px; background: #E2E8F0; margin: 1.2cm 0; }
+
+  .feature { margin-bottom: 1cm; page-break-inside: avoid; }
+  .feature h3 { margin-bottom: 0.3cm; }
+  .feature p { margin-bottom: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0.8cm 0; font-size: 9.5pt; }
+  th { background: #F1F5F9; text-align: left; padding: 0.35cm 0.4cm; font-weight: 600; color: #1B2A4A; border-bottom: 2px solid #CBD5E1; }
+  td { padding: 0.35cm 0.4cm; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+
+  .pricing-table th:last-child { background: #EFF6FF; }
+  .pricing-table td:last-child { background: #F8FAFC; }
+
+  ul { padding-left: 0.6cm; margin-bottom: 0.8cm; }
+  li { margin-bottom: 0.3cm; }
+  li strong { color: #1B2A4A; }
+
+  .badge { display: inline-block; background: #DBEAFE; color: #1E40AF; padding: 0.1cm 0.3cm; border-radius: 0.15cm; font-size: 8pt; font-weight: 600; }
+  .badge--green { background: #DCFCE7; color: #166534; }
+  .badge--red { background: #FEE2E2; color: #991B1B; }
+
+  .note { background: #F8FAFC; border-left: 3px solid #3B82F6; padding: 0.5cm 0.6cm; margin: 1cm 0; font-size: 9.5pt; color: #475569; page-break-inside: avoid; }
+
+  .footer-note { font-size: 8.5pt; color: #94A3B8; margin-top: 2cm; padding-top: 0.5cm; border-top: 1px solid #E2E8F0; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <div class="cover__overline">LinuxBCN · estategiadelcontenido — Abril 2026</div>
+    <h1>TechDocs.<br><span class="cover__accent">Documentació tècnica<br>amb criteri.</span></h1>
+    <p class="cover__subtitle">Sistema de gestió de documentació tècnica estructurada per a fabricants industrials. Alternativa lliure, a mida i sense llicències als sistemes propietaris.</p>
+  </div>
+  <div class="cover__footer">
+    <strong>Joan Linux</strong> — LinuxBCN.com / MalditasMaquinas.com<br>
+    <strong>Carlos Campo</strong> — estategiadelcontenido.com<br><br>
+    Document confidencial · Ús intern
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<div class="section-label">El projecte</div>
+<h2>Què és TechDocs?</h2>
+<p class="lead">Un sistema de gestió de documentació tècnica per a empreses que necessiten manuals, certificats i documentació de conformitat — sense pagar 15.000–50.000€ anuals en llicències de SCHEMA ST4, MadCap Flare o Paligo.</p>
+
+<p>TechDocs està basat en <strong>estàndards oberts</strong> (Markdown, Git, Hugo, Pandoc) i genera tant <strong>portals web</strong> com <strong>PDFs amb metadades legals</strong> a partir del mateix contingut. El client és propietari del seu sistema per sempre.</p>
+
+<div class="divider"></div>
+
+<div class="section-label">El problema</div>
+<h2>Per què existeix?</h2>
+
+<p>La <strong>Directiva de Maquinària 2006/42/CE</strong> exigeix que els fabricants de maquinària industrial disposin de documentació tècnica completa: manuals d'operació, manteniment i seguretat en l'idioma del país d'ús, amb traçabilitat de versions i aprovacions. Les <strong>auditories ISO 9001</strong> demanen control documental estricte.</p>
+
+<p>Els sistemes actuals del mercat (SCHEMA ST4, MadCap Flare, Paligo) són excel·lents però <strong>impagables per a una PYME</strong> de 10–200 treballadors. A més, el client queda lligat a un proveïdor amb llicències anuals obligatòries.</p>
+
+<p><strong>TechDocs resol aquesta dicotomia</strong>: mateixes funcionalitats, estàndards oberts, sense dependència de proveïdors.</p>
+
+<div class="divider"></div>
+
+<div class="section-label">Com funciona</div>
+<h2>Arquitectura del sistema</h2>
+
+<p>TechDocs funciona amb un flux simple però potent:</p>
+
+<div class="feature">
+  <h3>1. Contingut en Markdown</h3>
+  <p>Els redactors escriuen la documentació en <strong>Markdown amb metadades YAML</strong>: títol, models aplicables, revisió, aprovador, data d'aprovació, revisió legal. No cal conèixer codi.</p>
+</div>
+
+<div class="feature">
+  <h3>2. Edició via web (Decap CMS)</h3>
+  <p>Una interfície web senzilla permet editar continguts sense tocar Git ni línies de comandes. Inclou <strong>workflow d'aprovacions</strong>: esborrany → revisió → publicat.</p>
+</div>
+
+<div class="feature">
+  <h3>3. Publicació automàtica</h3>
+  <p>Cada cop que s'aprova un document, <strong>GitHub Actions</strong> construeix i desplega automàticament el portal web. El sistema també genera <strong>PDFs amb metadades legals</strong> (versió, aprovador, data) via Pandoc.</p>
+</div>
+
+<div class="feature">
+  <h3>4. Control total via Git</h3>
+  <p>Git registra automàticament <strong>qui, quan i què</strong> s'ha canviat. Això és exactament el que un auditor CE o ISO necessita veure: traçabilitat completa.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Funcionalitats</div>
+<h2>Què pot fer?</h2>
+
+<table>
+  <tr><th>Funcionalitat</th><th>Descripció</th></tr>
+  <tr><td><strong>Multiidioma natiu</strong></td><td>Català, castellà, anglès — o qualsevol combinació. El mateix contingut, tantes llengües com calguin.</td></tr>
+  <tr><td><strong>Gestió de variants</strong></td><td>Un mateix capítol pot ser aplicable a models X100 i X200 però no al X50. El sistema filtra automàticament.</td></tr>
+  <tr><td><strong>Registre d'aprovacions</strong></td><td>Cada document té: revisió, aprovador, data d'aprovació i estat de revisió legal.</td></tr>
+  <tr><td><strong>PDF amb metadades legals</strong></td><td>Generació automàtica de PDFs amb capçalera corporativa, peu amb versió i aprovador.</td></tr>
+  <tr><td><strong>Shortcodes tècnics</strong></td><td>Caixes d'advertència (elèctric, mecànic, químic, tèrmic), notes, passos numerats, badges de models.</td></tr>
+  <tr><td><strong>Portal web estàtic</strong></td><td>Ràpid, segur, sense servidor. Hosting gratuït amb GitHub Pages.</td></tr>
+  <tr><td><strong>Cerca estàtica</strong></td><td>Pagefind: cerca instantània sense necessitat de base de dades.</td></tr>
+  <tr><td><strong>Historial de revisions</strong></td><td>Taula visual de l'evolució de cada document: versió, data, aprovador, canvis.</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<div class="section-label">Competència</div>
+<h2>Comparativa de mercat</h2>
+
+<table>
+  <tr><th>Característica</th><th>ST4</th><th>Paligo</th><th>Flare</th><th>TechDocs</th></tr>
+  <tr><td>Preu orientatiu</td><td>15–50k€/any</td><td>3–12k€/any</td><td>4–8k€/any</td><td><strong>3–8k€ únic</strong></td></tr>
+  <tr><td>Llicència anual</td><td><span class="badge badge--red">Obligatòria</span></td><td><span class="badge badge--red">SaaS</span></td><td><span class="badge badge--red">Renovació</span></td><td><span class="badge badge--green">Cap</span></td></tr>
+  <tr><td>Multiidioma</td><td><span class="badge badge--green">✓</span></td><td><span class="badge badge--green">✓</span></td><td><span class="badge badge--green">✓</span></td><td><span class="badge badge--green">✓</span></td></tr>
+  <tr><td>Control versions</td><td><span class="badge badge--green">✓</span></td><td><span class="badge badge--green">✓</span></td><td>Limitat</td><td><span class="badge badge--green">Git complet</span></td></tr>
+  <tr><td>Propietari del sistema</td><td><span class="badge badge--red">✗</span></td><td><span class="badge badge--red">✗</span></td><td><span class="badge badge--red">✗</span></td><td><span class="badge badge--green">✓ Obert</span></td></tr>
+  <tr><td>Autoallotjable</td><td><span class="badge badge--red">✗</span></td><td><span class="badge badge--red">✗</span></td><td><span class="badge badge--red">✗</span></td><td><span class="badge badge--green">✓</span></td></tr>
+</table>
+
+<div class="divider"></div>
+
+<div class="section-label">Model de negoci</div>
+<h2>Paquets i preus</h2>
+
+<p>TechDocs es ven com a <strong>projecte d'implementació</strong>, no com a producte amb llicència recurrent.</p>
+
+<table>
+  <tr><th>Paquet</th><th>Contingut</th><th>Preu</th></tr>
+  <tr><td><strong>Starter</strong></td><td>Hugo base + 1 idioma + PDF + Decap CMS + deploy + tema visual</td><td>2.500–3.500€</td></tr>
+  <tr><td><strong>Professional</strong></td><td>Starter + 2 idiomes + variants + registre d'aprovacions + cerca + formació</td><td>4.500–6.000€</td></tr>
+  <tr><td><strong>Legal</strong></td><td>Professional + PDF signat + dashboard traduccions + acompanyament 3 mesos + validació auditor CE</td><td>7.000–9.000€</td></tr>
+</table>
+
+<div class="note">
+  <strong>Manteniment opcional:</strong> 150–300€/mes (hosting + actualitzacions + suport tècnic). El client no paga llicències — només el que necessita.
+</div>
+
+<h3>Ingressos recurrents</h3>
+<p>A diferència dels competidors (on la recurrència és la llicència obligatòria), la recurrència de TechDocs ve del <strong>valor afegit</strong>:</p>
+<ul>
+  <li><strong>Manteniment i hosting</strong> — el sistema funciona sol, però alguns clients prefereixen que algú el vigili</li>
+  <li><strong>Actualitzacions normatives</strong> — quan canvia la directiva, cal revisar la documentació</li>
+  <li><strong>Noves versions de producte</strong> — cada nou model del client requereix adaptar el sistema</li>
+  <li><strong>Noves traduccions</strong> — entrada a nous mercats = nous idiomes</li>
+</ul>
+
+<div class="divider"></div>
+
+<div class="section-label">Estat actual</div>
+<h2>On som ara?</h2>
+
+<p>TechDocs té un <strong>MVP funcional</strong> amb dues demos reals:</p>
+
+<h3>Manual Model X100 (demo intern)</h3>
+<ul>
+  <li>3 capítols: Seguretat, Instal·lació, Operació</li>
+  <li>En català (base), amb estructura multiidioma preparada</li>
+</ul>
+
+<h3>Manual SECO SV 1003/1005 D (cas real)</h3>
+<ul>
+  <li>8 capítols complets de la documentació original de Busch</li>
+  <li>4 diagrames tècnics SVG creats per al projecte</li>
+  <li>Disponible en <strong>català, castellà i anglès</strong></li>
+  <li>Declaració de conformitat CE inclosa</li>
+  <li>Taula de resolució de problemes completa</li>
+  <li>Referències de peces de recanvi Busch integrades</li>
+</ul>
+
+<p>El sistema està desplegat a <strong>112books.github.io/TechDocs/</strong> amb protecció per contrasenya per a la demo.</p>
+
+<div class="divider"></div>
+
+<div class="section-label">Roadmap</div>
+<h2>Pròxims passos</h2>
+
+<table>
+  <tr><th>Versió</th><th>Funcionalitats</th><th>Termini est.</th></tr>
+  <tr><td><strong>v1.0 (MVP)</strong><br><span class="badge badge--green">En curs</span></td><td>Hugo + tema + shortcodes + multiidioma + Decap CMS + CI/CD + password gate</td><td>—</td></tr>
+  <tr><td><strong>v1.5</strong><br><span class="badge">Següent</span></td><td>PDF signat digitalment + registre d'aprovacions persistent + exportació XML + dashboard de traduccions</td><td>4–6 setmanes</td></tr>
+  <tr><td><strong>v2.0</strong><br><span class="badge">Futur</span></td><td>Portal de client amb autenticació + Weblate integrat + notificacions + PDF/A per a arxiu legal</td><td>3–4 mesos</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<div class="section-label">Equip</div>
+<h2>Qui hi ha darrere?</h2>
+
+<p><strong>Joan Linux</strong> — LinuxBCN.com / MalditasMaquinas.com. Part tècnica: infraestructura, desenvolupament, CI/CD, stack Hugo/Git.</p>
+<p><strong>Carlos Campo</strong> — estategiadelcontenido.com. Part estratègica: estratègia de continguts, posicionament comercial, relació amb clients.</p>
+
+<div class="note">
+  <strong>Potencial white-label:</strong> El sistema pot empaquetar-se per a una consultora de conformitat CE que el vengui als seus clients com a producte propi.
+</div>
+
+<div class="footer-note">
+  <p>Document generat el 30 d'abril de 2026.<br>
+  TechDocs — LinuxBCN / estategiadelcontenido.com<br>
+  https://github.com/112books/TechDocs</p>
+</div>
+
+</div>
+
+</body>
+</html>

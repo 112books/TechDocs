@@ -1,0 +1,66 @@
+{
+  "manual": "seco-sv1003",
+  "language": "ca",
+  "generated": "2026-05-22T14:27:09.717826",
+  "chapters": [
+    {
+      "title": "Seguretat",
+      "chapter": 1,
+      "weight": 1,
+      "blocks": [
+        {
+          "block_id": "WARN-ELEC-001",
+          "type": "warning",
+          "category": "electrical",
+          "title": "Perill de descàrrega elèctrica",
+          "severity": "critical",
+          "tags": [
+            "electric",
+            "high-voltage",
+            "lockout-tagout",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"electric\" >}}\n**PERILL** — Cables amb electricitat. Risc de descàrrega elèctrica.\n\nEls treballs d'instal·lació elèctrica han de ser realitzats únicament per personal qualificat.\n\nD'acord amb la norma EN 60204-1, el client ha de garantir una protecció de corrent a la seva instal·lació.\n{{< /warning >}}\n\n### Procediment de bloqueig (LOTO)\n\nAbans de qualsevol intervenció:\n\n{{< step number=\"1\" >}}\nDesconnecteu l'alimentació de la màquina.\n{{< /step >}}\n\n{{< step number=\"2\" >}}\nBloquegeu el dispositiu de tall amb cadenat personal.\n{{< /step >}}\n\n{{< step number=\"3\" >}}\nVerifiqueu l'absència de tensió amb equip adequat.\n{{< /step >}}\n\n{{< step number=\"4\" >}}\nEspereu un mínim de 5 minuts per a la dissipació de tensions residuals.\n{{< /step >}}"
+        },
+        {
+          "block_id": "WARN-CRUSH-001",
+          "type": "warning",
+          "category": "safety",
+          "title": "Risc d'aixafament",
+          "severity": "critical",
+          "tags": [
+            "crush",
+            "pinch-point",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"crush\" >}}\n**PERILL** — Indica una situació de risc imminent que provocarà la mort o lesions greus si no s'evita.\n{{< /warning >}}"
+        },
+        {
+          "block_id": "WARN-THERM-001",
+          "type": "warning",
+          "category": "thermal",
+          "title": "Risc de cremades",
+          "severity": "high",
+          "tags": [
+            "thermal",
+            "burn",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"thermal\" >}}\n**PRECAUCIÓ** — Indica una situació potencialment perillosa que pot provocar lesions lleus.\n{{< /warning >}}"
+        }
+      ]
+    }
+  ]
+}
