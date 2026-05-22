@@ -1,8 +1,246 @@
 {
   "manual": "seco-sv1003",
   "language": "ca",
-  "generated": "2026-05-22T14:27:09.717826",
+  "generated": "2026-05-22T14:30:47.984416",
   "chapters": [
+    {
+      "title": "Dades tècniques",
+      "chapter": 13,
+      "weight": 13,
+      "blocks": [
+        {
+          "block_id": "SPEC-PERF-SV1003",
+          "type": "specification",
+          "category": "performance",
+          "title": "Especificacions tècniques SECO SV 1003/1005 D",
+          "severity": "",
+          "tags": [
+            "technical-data",
+            "performance",
+            "flow-rate",
+            "power",
+            "noise",
+            "weight"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "## Especificacions tècniques\n\n| Paràmetre | SV 1003 D | SV 1005 D |\n|---|---|---|\n| **Cabal nominal (50 Hz / 60 Hz)** | 3,0 / 3,6 m³/h | 5,0 / 5,6 m³/h |\n| **Buit límit** | 150 hPa (mbar) abs. | 150 hPa (mbar) abs. |\n| **Potència nominal del motor (50/60 Hz)** | 0,1 / 0,12 kW | 0,14 / 0,16 kW |\n| **Velocitat nominal del motor (50/60 Hz)** | 3000 / 3600 min⁻¹ | 3000 / 3600 min⁻¹ |\n| **Nivell sonor (EN ISO 2151)** | 59 / 63 dB(A) | 68 / 72 dB(A) |\n| **Rang de temperatura ambient** | 0 … 40 °C | 0 … 40 °C |\n| **Pressió ambiental** | Pressió atmosfèrica | Pressió atmosfèrica |\n| **Pes aproximat** | 5,2 kg | 6,0 kg |\n\n{{< note >}}\nEls valors poden variar segons les condicions de funcionament i l'equipament específic. Consulteu la placa identificativa de la vostra màquina per a les dades exactes.\n{{< /note >}}"
+        }
+      ]
+    },
+    {
+      "title": "Manteniment",
+      "chapter": 8,
+      "weight": 8,
+      "blocks": [
+        {
+          "block_id": "WARN-ELEC-001",
+          "type": "warning",
+          "category": "electrical",
+          "title": "Perill de descàrrega elèctrica",
+          "severity": "critical",
+          "tags": [
+            "electric",
+            "high-voltage",
+            "lockout-tagout",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"electric\" >}}\n**PERILL** — Cables amb electricitat. Risc de descàrrega elèctrica.\n\nEls treballs d'instal·lació elèctrica han de ser realitzats únicament per personal qualificat.\n\nD'acord amb la norma EN 60204-1, el client ha de garantir una protecció de corrent a la seva instal·lació.\n{{< /warning >}}\n\n### Procediment de bloqueig (LOTO)\n\nAbans de qualsevol intervenció:\n\n{{< step number=\"1\" >}}\nDesconnecteu l'alimentació de la màquina.\n{{< /step >}}\n\n{{< step number=\"2\" >}}\nBloquegeu el dispositiu de tall amb cadenat personal.\n{{< /step >}}\n\n{{< step number=\"3\" >}}\nVerifiqueu l'absència de tensió amb equip adequat.\n{{< /step >}}\n\n{{< step number=\"4\" >}}\nEspereu un mínim de 5 minuts per a la dissipació de tensions residuals.\n{{< /step >}}"
+        },
+        {
+          "block_id": "WARN-MAINT-001",
+          "type": "warning",
+          "category": "maintenance",
+          "title": "Risc d'enverinament per contaminació",
+          "severity": "high",
+          "tags": [
+            "maintenance",
+            "contamination",
+            "hazardous-substances",
+            "ppe"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"crush\" >}}\n**ADVERTIMENT** — Màquines contaminades amb substàncies perilloses. Existeix risc d'enverinament i infecció. Si la màquina està contaminada amb substàncies perilloses, cal portar l'equip de protecció individual adequat.\n{{< /warning >}}"
+        },
+        {
+          "block_id": "WARN-THERM-001",
+          "type": "warning",
+          "category": "thermal",
+          "title": "Risc de cremades",
+          "severity": "high",
+          "tags": [
+            "thermal",
+            "burn",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"thermal\" >}}\n**PRECAUCIÓ** — Indica una situació potencialment perillosa que pot provocar lesions lleus.\n{{< /warning >}}"
+        },
+        {
+          "block_id": "WARN-MAINT-002",
+          "type": "warning",
+          "category": "maintenance",
+          "title": "Productes de neteja inadequats",
+          "severity": "medium",
+          "tags": [
+            "maintenance",
+            "cleaning",
+            "solvents",
+            "paint"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"general\" >}}\n**AVÍS** — Utilització de productes de neteja inadequats. Existeix risc de desprendre etiquetes de seguretat i pintura protectora. No utilitzeu dissolvents incompatibles per netejar la màquina.\n{{< /warning >}}"
+        },
+        {
+          "block_id": "PROC-MAINT-001",
+          "type": "procedure",
+          "category": "maintenance",
+          "title": "Procediment previ al manteniment",
+          "severity": "",
+          "tags": [
+            "maintenance",
+            "lockout",
+            "preparation",
+            "safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "### Procediment previ al manteniment\n\n{{< step number=\"1\" >}}\nApagueu la màquina i **bloqueu-la** perquè no pugui posar-se en marxa per error.\n{{< /step >}}\n\n{{< step number=\"2\" >}}\nDescarregueu els conductes connectats perquè tornin a la pressió atmosfèrica.\n{{< /step >}}\n\n{{< step number=\"3\" >}}\nDesconnecteu totes les connexions.\n{{< /step >}}"
+        },
+        {
+          "block_id": "SPEC-MAINT-PLAN-001",
+          "type": "specification",
+          "category": "maintenance",
+          "title": "Pla de manteniment - Intervals",
+          "severity": "",
+          "tags": [
+            "maintenance",
+            "intervals",
+            "schedule",
+            "inspection"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "## Pla de manteniment\n\nEls intervals de manteniment depenen en gran mesura de les condicions de funcionament concretes. Els intervals indicats són **valors de partida**, que s'haurien d'escurçar o allargar segons correspongui.\n\n| Interval | Tasca |\n|---|---|\n| **Cada 3000 hores** | Comprovar les pales (VA) i substituir-les si cal. Canviar les arandeles de feltre (FW). |\n| **Cada 6 mesos** | Netejar la pols i la brutícia de la màquina. |\n| **Cada 6 mesos** (amb filtre) | Comprovar el cartutx del filtre d'aspiració i substituir-lo si cal. |\n\n{{< note >}}\nAmb aplicacions dures o en condicions especialment exigents (grans concentracions de pols, contaminació, penetració de material del procés), pot ser necessari **escurçar significativament** els intervals de manteniment.\n{{< /note >}}"
+        },
+        {
+          "block_id": "SPEC-BLADES-001",
+          "type": "specification",
+          "category": "maintenance",
+          "title": "Especificacions pales i criteris de substitució",
+          "severity": "",
+          "tags": [
+            "maintenance",
+            "blades",
+            "replacement",
+            "specification",
+            "wear"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "### Criteri de substitució de pales\n\n| Model | Alçada mínima (H) |\n|---|---|\n| **SV 1003 D** | H ≥ 14 mm |\n| **SV 1005 D** | H ≥ 17 mm |\n\nSi H està per sota del valor mínim, **substituir immediatament**.\n\n### Eines necessàries\n\n| Eina | Mida |\n|---|---|\n| Clau hexagonal | 4 mm |\n| Alicates per a arandeles | 3 mm |"
+        },
+        {
+          "block_id": "SPEC-SPARES-001",
+          "type": "specification",
+          "category": "maintenance",
+          "title": "Peces de recanvi",
+          "severity": "",
+          "tags": [
+            "maintenance",
+            "spare-parts",
+            "busch",
+            "warranty"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "### Peces de recanvi\n\n| Peça | Referència Busch |\n|---|---|\n| Kit de manteniment complet | 0993 529 770 |\n| Pales (3 uds.) — SV 1003 D | 0722 104 640 |\n| Pales (3 uds.) — SV 1005 D | 0722 141 943 |\n| Arandeles de feltre (2 uds.) | 0537 138 479 |\n\n{{< warning type=\"general\" >}}\n**AVÍS** — Per garantir el funcionament correcte de la màquina i validar la garantia, s'han d'utilitzar **exclusivament peces de recanvi i consumibles originals de Busch**.\n{{< /warning >}}"
+        }
+      ]
+    },
+    {
+      "title": "Resolució de problemes",
+      "chapter": 12,
+      "weight": 12,
+      "blocks": [
+        {
+          "block_id": "WARN-ELEC-001",
+          "type": "warning",
+          "category": "electrical",
+          "title": "Perill de descàrrega elèctrica",
+          "severity": "critical",
+          "tags": [
+            "electric",
+            "high-voltage",
+            "lockout-tagout",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"electric\" >}}\n**PERILL** — Cables amb electricitat. Risc de descàrrega elèctrica.\n\nEls treballs d'instal·lació elèctrica han de ser realitzats únicament per personal qualificat.\n\nD'acord amb la norma EN 60204-1, el client ha de garantir una protecció de corrent a la seva instal·lació.\n{{< /warning >}}\n\n### Procediment de bloqueig (LOTO)\n\nAbans de qualsevol intervenció:\n\n{{< step number=\"1\" >}}\nDesconnecteu l'alimentació de la màquina.\n{{< /step >}}\n\n{{< step number=\"2\" >}}\nBloquegeu el dispositiu de tall amb cadenat personal.\n{{< /step >}}\n\n{{< step number=\"3\" >}}\nVerifiqueu l'absència de tensió amb equip adequat.\n{{< /step >}}\n\n{{< step number=\"4\" >}}\nEspereu un mínim de 5 minuts per a la dissipació de tensions residuals.\n{{< /step >}}"
+        },
+        {
+          "block_id": "WARN-THERM-001",
+          "type": "warning",
+          "category": "thermal",
+          "title": "Risc de cremades",
+          "severity": "high",
+          "tags": [
+            "thermal",
+            "burn",
+            "personal-safety"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "{{< warning type=\"thermal\" >}}\n**PRECAUCIÓ** — Indica una situació potencialment perillosa que pot provocar lesions lleus.\n{{< /warning >}}"
+        },
+        {
+          "block_id": "REF-TROUBLE-001",
+          "type": "reference",
+          "category": "trouble",
+          "title": "Taula de resolució de problemes",
+          "severity": "",
+          "tags": [
+            "troubleshooting",
+            "fault-diagnosis",
+            "maintenance",
+            "repair"
+          ],
+          "applies_to": [
+            "SV 1003 D",
+            "SV 1005 D"
+          ],
+          "content": "| Problema | Possible causa | Solució |\n|---|---|---|\n| **La màquina no s'engega** | El motor no rep la tensió correcta | Comproveu el subministrament elèctric |\n| | El motor està defectuós | Repareu la màquina (contactar amb Busch) |\n| **No arriba a la pressió habitual a aspiració** | Arandeles de feltre (FW) parcialment obstruïdes | Canvieu les arandeles de feltre |\n| | Cartutx del filtre d'entrada obstruït | Substituïu el cartutx del filtre |\n| | Pales encallades | Allibereu les pales o substituïu-les |\n| | Pales (VA) gastades | Substituïu les pales |\n| **Molt soroll en funcionament** | Sentit de rotació incorrecte | Comproveu el sentit de la rotació |\n| | Rodaments defectuosos | Repareu la màquina (contactar amb Busch) |\n| **S'escalfa massa** | Refrigeració insuficient | Netegeu la pols i la brutícia de la màquina |\n| | Temperatura ambient massa alta | Respecteu la temperatura ambient permesa |\n| | Arandeles de feltre obstruïdes | Canvieu les arandeles de feltre |\n| | Filtre d'entrada obstruït | Substituïu el cartutx dels filtres |\n\n{{< note >}}\nPer a la resolució de problemes que no apareixen a la taula, poseu-vos en contacte amb el vostre representant de Busch.\n{{< /note >}}"
+        }
+      ]
+    },
     {
       "title": "Seguretat",
       "chapter": 1,
