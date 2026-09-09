@@ -359,3 +359,14 @@ The system must demonstrate:
 - [ ] Weblate integration
 - [ ] Email/Telegram notifications on doc changes
 - [ ] PDF/A export for legal archiving
+
+
+---
+
+## Control horari
+
+Skill actiu: `gestor-hores` — registra automàticament el temps de treball per sessió.
+
+- Logs a `.taques/TechDocs/YYYY-MM-DD.md` (creat automàticament)
+- Comandes: `/time-log [tasca] [hores]`, `/time-report [periode]`, `/time-config [hores] [tarifa]`
+- No modificar manualment els fitxers `.taques/` — són append-only
